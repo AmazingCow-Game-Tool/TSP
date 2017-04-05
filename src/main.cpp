@@ -1,11 +1,5 @@
 #include <iostream>
-#include "include/ImageFinder.h"
-#include "include/ImageLoader.h"
-#include "include/Packer.h"
-#include "include/ImageSorter/WidthImageSorter.h"
-#include "include/PackingStrategy/SimplePackingStrategy.h"
-#include "include/SheetImageWritter/BasicSheetImageWritter.h"
-#include "include/SheetRectWritter/Cocos2dxSheetRectWritter.h"
+#include "include/TSP.h"
 
 using namespace std;
 

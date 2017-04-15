@@ -3,7 +3,7 @@
 //QT
 #include <QtCore>
 //TSP
-#include "include/Image.h"
+#include "include/SheetWritterOptions/SheetWritterOptions.h"
 
 
 class ISheetRectWritter
@@ -14,9 +14,5 @@ public:
 
     // Interface Methods //
 public:
-    virtual void write(
-        const QVector<Image> &images,
-        const QVector<QRect> &rects,
-        const QSize          &size
-    ) const = 0;
+    virtual void write(const SheetWritterOptions &options) const = 0;
 };

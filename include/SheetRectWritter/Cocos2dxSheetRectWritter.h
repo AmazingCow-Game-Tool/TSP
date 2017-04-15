@@ -9,21 +9,7 @@
 class Cocos2dxSheetRectWritter :
     public ISheetRectWritter
 {
-    // CTOR / DTOR //
-public:
-    Cocos2dxSheetRectWritter(const QString &outputPath);
-
-
     // Interface Methods //
 public:
-    virtual void write(
-        const QVector<Image> &images,
-        const QVector<QRect> &rects,
-        const QSize          &size
-    ) const override;
-
-
-    // iVars //
-public:
-    QString m_outputPath;
+    virtual void write(const SheetWritterOptions &options) const override;
 };

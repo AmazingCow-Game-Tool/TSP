@@ -12,9 +12,18 @@
 
 class Packer
 {
-
+    // Inner Types //
 public:
-    Packer();
+    struct Options
+    {
+        QString imgFilename;
+        QString dataFilename;
+        QString outputPath;
+    };
+
+    // CTOR / DTOR //
+public:
+    Packer(const Options &options);
 
     //
 public:
@@ -35,6 +44,8 @@ public:
 
     // iVars //
 private:
+    Options m_options;
+
     QVector<Image> m_images;
 
     std::unique_ptr<IImageSorter>     m_pImageSorter;

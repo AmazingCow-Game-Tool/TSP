@@ -5,31 +5,18 @@
 
 
 ////////////////////////////////////////////////////////////////////////////////
-// CTOR                                                                       //
-////////////////////////////////////////////////////////////////////////////////
-Cocos2dxSheetRectWritter::Cocos2dxSheetRectWritter(const QString &outputPath) :
-    m_outputPath(outputPath)
-{
-    //Empty...
-}
-
-
-////////////////////////////////////////////////////////////////////////////////
 // Interface Methods                                                          //
 ////////////////////////////////////////////////////////////////////////////////
-void Cocos2dxSheetRectWritter::write(
-    const QVector<Image> &images,
-    const QVector<QRect> &rects,
-    const QSize          &size) const
+void Cocos2dxSheetRectWritter::write(const SheetWritterOptions &options) const
 {
     //COWTODO(n2omatt): Make sure that images and rects are the same size.
 
     //Build the Frames.
     QVariantMap frames_map;
-    for(int i = 0; i < images.size(); ++i)
+    for(int i = 0; i < options.images.size(); ++i)
     {
-        auto image = images[i];
-        auto rect  = rects [i];
+        auto image = options.images[i];
+        auto rect  = options.rects [i];
 
         QVariantMap frame_map;
 
@@ -66,12 +53,12 @@ void Cocos2dxSheetRectWritter::write(
     //Build Metadata.
     QVariantMap metadata_map;
     metadata_map["format"             ] = 2; //COWTODO(n2omatt) Remove magic number.
-    metadata_map["realTextureFileName"] = m_outputPath;
-    metadata_map["textureFileName"    ] = m_outputPath;
+    metadata_map["realTextureFileName"] = options.imageOutputFilename;
+    metadata_map["textureFileName"    ] = options.imageOutputFilename;
     metadata_map["size"               ] = QString().sprintf(
         "{%d, %d}",
-        size.width(),
-        size.height()
+        options.sheetSize.width(),
+        options.sheetSize.height()
     );
 
     //Build the Plist.
@@ -80,8 +67,13 @@ void Cocos2dxSheetRectWritter::write(
     plist_map["metadata"] = metadata_map;
 
     //Write to file.
-    QFile file(m_outputPath);
-    if(file.open(QIODevice::WriteOnly | QIODevice::Truncate))
+    //COWTODO(n2omatt): Error checking...
+    auto filename   = options.dataOutputFilename;
+    auto outpath    = options.outputPath;
+    auto final_path = QDir(outpath).filePath(filename);
+
+    QFile file(final_path);
+    if(file.open(QIODevice::WriteOnly | QIODevice::Truncate | QIODevice::Text))
     {
         QTextStream stream(&file);
         stream << PListSerializer::toPList(plist_map);

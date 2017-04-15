@@ -1,11 +1,13 @@
 //Header
 #include "include/Packer.h"
-
-#include <algorithm>
-
+//std
+#include <algorithm> //for sort
+//TSP
+#include "include/SheetWritterOptions/SheetWritterOptions.h"
 
 //
-Packer::Packer()
+Packer::Packer(const Options &options) :
+    m_options(options)
 {
 
 }
@@ -52,17 +54,22 @@ void Packer::pack()
         }
     );
 
+    //Pack
     m_pPackingStrategy->pack(m_images);
 
-    m_pSheetImageWritter->write(
-        m_images,
-        m_pPackingStrategy->getOutputRects(),
-        m_pPackingStrategy->getSheetSize()
-    );
 
-    m_pSheetRectWritter->write(
-        m_images,
-        m_pPackingStrategy->getOutputRects(),
-        m_pPackingStrategy->getSheetSize()
-    );
+    //Setup the Writter Options
+    auto writter_options = SheetWritterOptions {
+        .imageOutputFilename = m_options.imgFilename,
+        .dataOutputFilename  = m_options.dataFilename,
+        .outputPath          = m_options.outputPath,
+
+        .images    = m_images,
+        .rects     = m_pPackingStrategy->getOutputRects(),
+        .sheetSize = m_pPackingStrategy->getSheetSize()
+    };
+
+    //Write...
+    m_pSheetImageWritter->write(writter_options);
+    m_pSheetRectWritter->write (writter_options);
 }

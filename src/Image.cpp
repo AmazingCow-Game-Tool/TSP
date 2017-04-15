@@ -23,6 +23,16 @@ const QString& Image::getPath() const
     return m_path;
 }
 
+const QString Image::getBasename() const
+{
+    return QFileInfo(m_path).baseName();
+}
+
+const QString Image::getFilename() const
+{
+    return QFileInfo(m_path).fileName();
+}
+
 const QSize& Image::getSize() const
 {
     return m_size;

@@ -14,9 +14,12 @@ public:
 
     // Public Methods //
 public:
-    const QString& getPath  () const;
-    const QSize&   getSize  () const;
-    const QImage&  getQImage() const;
+    const QString& getPath    () const;
+    const QString  getBasename() const;
+    const QString  getFilename() const;
+
+    const QSize&  getSize  () const;
+    const QImage& getQImage() const;
 
 
     // iVars //

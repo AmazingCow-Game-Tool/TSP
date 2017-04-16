@@ -1,3 +1,43 @@
+//----------------------------------------------------------------------------//
+//               █      █                                                     //
+//               ████████                                                     //
+//             ██        ██                                                   //
+//            ███  █  █  ███        Cocos2dxSheetRectWritter.cpp              //
+//            █ █        █ █        TSP                                       //
+//             ████████████                                                   //
+//           █              █       Copyright (c) 2017                        //
+//          █     █    █     █      AmazingCow - www.AmazingCow.com           //
+//          █     █    █     █                                                //
+//           █              █       N2OMatt - n2omatt@amazingcow.com          //
+//             ████████████         www.amazingcow.com/n2omatt                //
+//                                                                            //
+//                  This software is licensed as GPLv3                        //
+//                 CHECK THE COPYING FILE TO MORE DETAILS                     //
+//                                                                            //
+//    Permission is granted to anyone to use this software for any purpose,   //
+//   including commercial applications, and to alter it and redistribute it   //
+//               freely, subject to the following restrictions:               //
+//                                                                            //
+//     0. You **CANNOT** change the type of the license.                      //
+//     1. The origin of this software must not be misrepresented;             //
+//        you must not claim that you wrote the original software.            //
+//     2. If you use this software in a product, an acknowledgment in the     //
+//        product IS HIGHLY APPRECIATED, both in source and binary forms.     //
+//        (See opensource.AmazingCow.com/acknowledgment.html for details).    //
+//        If you will not acknowledge, just send us a email. We'll be         //
+//        *VERY* happy to see our work being used by other people. :)         //
+//        The email is: acknowledgment_opensource@AmazingCow.com              //
+//     3. Altered source versions must be plainly marked as such,             //
+//        and must not be misrepresented as being the original software.      //
+//     4. This notice may not be removed or altered from any source           //
+//        distribution.                                                       //
+//     5. Most important, you must have fun. ;)                               //
+//                                                                            //
+//      Visit opensource.amazingcow.com for more open-source projects.        //
+//                                                                            //
+//                                  Enjoy :)                                  //
+//----------------------------------------------------------------------------//
+
 //Header
 #include "include/SheetRectWritter/Cocos2dxSheetRectWritter.h"
 //qtplist
@@ -5,31 +45,18 @@
 
 
 ////////////////////////////////////////////////////////////////////////////////
-// CTOR                                                                       //
-////////////////////////////////////////////////////////////////////////////////
-Cocos2dxSheetRectWritter::Cocos2dxSheetRectWritter(const QString &outputPath) :
-    m_outputPath(outputPath)
-{
-    //Empty...
-}
-
-
-////////////////////////////////////////////////////////////////////////////////
 // Interface Methods                                                          //
 ////////////////////////////////////////////////////////////////////////////////
-void Cocos2dxSheetRectWritter::write(
-    const QVector<Image> &images,
-    const QVector<QRect> &rects,
-    const QSize          &size) const
+void Cocos2dxSheetRectWritter::write(const SheetWritterOptions &options) const
 {
     //COWTODO(n2omatt): Make sure that images and rects are the same size.
 
     //Build the Frames.
     QVariantMap frames_map;
-    for(int i = 0; i < images.size(); ++i)
+    for(int i = 0; i < options.images.size(); ++i)
     {
-        auto image = images[i];
-        auto rect  = rects [i];
+        auto image = options.images[i];
+        auto rect  = options.rects [i];
 
         QVariantMap frame_map;
 
@@ -66,12 +93,12 @@ void Cocos2dxSheetRectWritter::write(
     //Build Metadata.
     QVariantMap metadata_map;
     metadata_map["format"             ] = 2; //COWTODO(n2omatt) Remove magic number.
-    metadata_map["realTextureFileName"] = m_outputPath;
-    metadata_map["textureFileName"    ] = m_outputPath;
+    metadata_map["realTextureFileName"] = options.imageOutputFilename;
+    metadata_map["textureFileName"    ] = options.imageOutputFilename;
     metadata_map["size"               ] = QString().sprintf(
         "{%d, %d}",
-        size.width(),
-        size.height()
+        options.sheetSize.width(),
+        options.sheetSize.height()
     );
 
     //Build the Plist.
@@ -80,8 +107,13 @@ void Cocos2dxSheetRectWritter::write(
     plist_map["metadata"] = metadata_map;
 
     //Write to file.
-    QFile file(m_outputPath);
-    if(file.open(QIODevice::WriteOnly | QIODevice::Truncate))
+    //COWTODO(n2omatt): Error checking...
+    auto filename   = options.dataOutputFilename;
+    auto outpath    = options.outputPath;
+    auto final_path = QDir(outpath).filePath(filename);
+
+    QFile file(final_path);
+    if(file.open(QIODevice::WriteOnly | QIODevice::Truncate | QIODevice::Text))
     {
         QTextStream stream(&file);
         stream << PListSerializer::toPList(plist_map);

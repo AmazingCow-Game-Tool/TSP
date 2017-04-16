@@ -2,7 +2,7 @@
 //               █      █                                                     //
 //               ████████                                                     //
 //             ██        ██                                                   //
-//            ███  █  █  ███        ImageLoader.cpp                           //
+//            ███  █  █  ███        SheetWritterOptions.h                     //
 //            █ █        █ █        TSP                                       //
 //             ████████████                                                   //
 //           █              █       Copyright (c) 2017                        //
@@ -38,32 +38,22 @@
 //                                  Enjoy :)                                  //
 //----------------------------------------------------------------------------//
 
-//Header
-#include "include/ImageLoader.h"
+#pragma once
 
+//QT
+#include <QtCore>
+//TSP
+#include "include/Image.h"
 
-////////////////////////////////////////////////////////////////////////////////
-// CTOR                                                                       //
-////////////////////////////////////////////////////////////////////////////////
-ImageLoader::ImageLoader(const QVector<QString> &imagePaths) :
-    m_imagePaths(imagePaths)
+struct SheetWritterOptions
 {
-    //Empty...
-}
+    QString imageOutputFilename;
+    QString dataOutputFilename;
 
+    QString outputPath;
 
-////////////////////////////////////////////////////////////////////////////////
-// Public Methods                                                             //
-////////////////////////////////////////////////////////////////////////////////
-QVector<Image> ImageLoader::loadImages()
-{
     QVector<Image> images;
-    foreach(QString path, m_imagePaths)
-    {
-        auto image = Image::LoadFromFile(path);
-        images.push_back(image);
-    }
+    QVector<QRect> rects;
 
-    return images;
-}
-
+    QSize sheetSize;
+};

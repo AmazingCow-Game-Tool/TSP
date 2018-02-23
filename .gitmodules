@@ -1,3 +1,9 @@
 [submodule "lib/CMD"]
 	path = lib/CMD
 	url = https://github.com/AmazingCow-Libs/CMD.git
+[submodule "lib/acow_cpp_goodies"]
+	path = lib/acow_cpp_goodies
+	url = https://github.com/AmazingCow-Libs/acow_cpp_goodies
+[submodule "lib/CoreAssert"]
+	path = lib/CoreAssert
+	url = https://github.com/AmazingCow-Libs/CoreAssert

@@ -1,49 +1,9 @@
-//----------------------------------------------------------------------------//
-//               █      █                                                     //
-//               ████████                                                     //
-//             ██        ██                                                   //
-//            ███  █  █  ███        Packer.cpp                                //
-//            █ █        █ █        TSP                                       //
-//             ████████████                                                   //
-//           █              █       Copyright (c) 2017                        //
-//          █     █    █     █      AmazingCow - www.AmazingCow.com           //
-//          █     █    █     █                                                //
-//           █              █       N2OMatt - n2omatt@amazingcow.com          //
-//             ████████████         www.amazingcow.com/n2omatt                //
-//                                                                            //
-//                  This software is licensed as GPLv3                        //
-//                 CHECK THE COPYING FILE TO MORE DETAILS                     //
-//                                                                            //
-//    Permission is granted to anyone to use this software for any purpose,   //
-//   including commercial applications, and to alter it and redistribute it   //
-//               freely, subject to the following restrictions:               //
-//                                                                            //
-//     0. You **CANNOT** change the type of the license.                      //
-//     1. The origin of this software must not be misrepresented;             //
-//        you must not claim that you wrote the original software.            //
-//     2. If you use this software in a product, an acknowledgment in the     //
-//        product IS HIGHLY APPRECIATED, both in source and binary forms.     //
-//        (See opensource.AmazingCow.com/acknowledgment.html for details).    //
-//        If you will not acknowledge, just send us a email. We'll be         //
-//        *VERY* happy to see our work being used by other people. :)         //
-//        The email is: acknowledgment_opensource@AmazingCow.com              //
-//     3. Altered source versions must be plainly marked as such,             //
-//        and must not be misrepresented as being the original software.      //
-//     4. This notice may not be removed or altered from any source           //
-//        distribution.                                                       //
-//     5. Most important, you must have fun. ;)                               //
-//                                                                            //
-//      Visit opensource.amazingcow.com for more open-source projects.        //
-//                                                                            //
-//                                  Enjoy :)                                  //
-//----------------------------------------------------------------------------//
-
-//Header
+// Header
 #include "include/Packer.h"
-//std
-#include <algorithm> //for sort
-//TSP
-#include "include/SheetWritterOptions/SheetWritterOptions.h"
+// std
+#include <algorithm> // for sort
+// TSP
+#include "include/SheetWriterOptions/SheetWriterOptions.h"
 
 //
 Packer::Packer(const Options &options) :
@@ -53,7 +13,7 @@ Packer::Packer(const Options &options) :
 }
 
 //
-void Packer::setImages(const QVector<Image> &images)
+void Packer::setImages(const std::vector<Image> &images)
 {
     m_images = images;
 }
@@ -68,48 +28,51 @@ void Packer::setPackingMethod(std::unique_ptr<IPackingStrategy> pPackingStrategy
 {
     m_pPackingStrategy = std::move(pPackingStrategy);
 }
-
-void Packer::setSheetImageWritter(
-    std::unique_ptr<ISheetImageWritter> pSheetImageWritter)
-{
-    m_pSheetImageWritter = std::move(pSheetImageWritter);
-}
-
-void Packer::setSheetRectWritter(
-    std::unique_ptr<ISheetRectWritter> pSheetRectWritter)
-{
-    m_pSheetRectWritter = std::move(pSheetRectWritter);
-}
+//
+//void Packer::setSheetImageWriter(
+//    std::unique_ptr<ISheetImageWriter> pSheetImageWriter)
+//{
+//    m_pSheetImageWriter = std::move(pSheetImageWriter);
+//}
+//
+//void Packer::setSheetRectWriter(
+//    std::unique_ptr<ISheetRectWriter> pSheetRectWriter)
+//{
+//    m_pSheetRectWriter = std::move(pSheetRectWriter);
+//}
 
 
 //
 void Packer::pack()
 {
-    //Sort the images.
+    //--------------------------------------------------------------------------
+    // Sort the images.
     std::sort(
         m_images.begin(),
         m_images.end  (),
         [this](const Image &i1, const Image &i2) {
-            return m_pImageSorter->sort(i1, i2) > 0;
+            return m_pImageSorter->Sort(i1, i2) > 0;
         }
     );
 
-    //Pack
-    m_pPackingStrategy->pack(m_images);
+    //--------------------------------------------------------------------------
+    // Pack
+    m_pPackingStrategy->Pack(m_images);
 
-
-    //Setup the Writter Options
-    auto writter_options = SheetWritterOptions {
+    //--------------------------------------------------------------------------
+    // Setup the Writer Options
+    auto writer_options = SheetWriterOptions {
         .imageOutputFilename = m_options.imgFilename,
         .dataOutputFilename  = m_options.dataFilename,
         .outputPath          = m_options.outputPath,
 
         .images    = m_images,
-        .rects     = m_pPackingStrategy->getOutputRects(),
-        .sheetSize = m_pPackingStrategy->getSheetSize()
+        .rects     = m_pPackingStrategy->GetOutputRects(),
+        .sheetSize = m_pPackingStrategy->GetSheetSize()
     };
 
-    //Write...
-    m_pSheetImageWritter->write(writter_options);
-    m_pSheetRectWritter->write (writter_options);
+    //--------------------------------------------------------------------------
+    // Write...
+    m_pSheetImageWriter->Write(writer_options);
+    m_pSheetRectWriter ->Write(writer_options);
 }

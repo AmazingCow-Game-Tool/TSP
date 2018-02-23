@@ -1,127 +1,91 @@
-//----------------------------------------------------------------------------//
-//               █      █                                                     //
-//               ████████                                                     //
-//             ██        ██                                                   //
-//            ███  █  █  ███        SimplePackingStrategy.cpp                 //
-//            █ █        █ █        TSP                                       //
-//             ████████████                                                   //
-//           █              █       Copyright (c) 2017                        //
-//          █     █    █     █      AmazingCow - www.AmazingCow.com           //
-//          █     █    █     █                                                //
-//           █              █       N2OMatt - n2omatt@amazingcow.com          //
-//             ████████████         www.amazingcow.com/n2omatt                //
-//                                                                            //
-//                  This software is licensed as GPLv3                        //
-//                 CHECK THE COPYING FILE TO MORE DETAILS                     //
-//                                                                            //
-//    Permission is granted to anyone to use this software for any purpose,   //
-//   including commercial applications, and to alter it and redistribute it   //
-//               freely, subject to the following restrictions:               //
-//                                                                            //
-//     0. You **CANNOT** change the type of the license.                      //
-//     1. The origin of this software must not be misrepresented;             //
-//        you must not claim that you wrote the original software.            //
-//     2. If you use this software in a product, an acknowledgment in the     //
-//        product IS HIGHLY APPRECIATED, both in source and binary forms.     //
-//        (See opensource.AmazingCow.com/acknowledgment.html for details).    //
-//        If you will not acknowledge, just send us a email. We'll be         //
-//        *VERY* happy to see our work being used by other people. :)         //
-//        The email is: acknowledgment_opensource@AmazingCow.com              //
-//     3. Altered source versions must be plainly marked as such,             //
-//        and must not be misrepresented as being the original software.      //
-//     4. This notice may not be removed or altered from any source           //
-//        distribution.                                                       //
-//     5. Most important, you must have fun. ;)                               //
-//                                                                            //
-//      Visit opensource.amazingcow.com for more open-source projects.        //
-//                                                                            //
-//                                  Enjoy :)                                  //
-//----------------------------------------------------------------------------//
+// Header
+#include "include/PackingStrategy/Implementation/SimplePackingStrategy.h"
 
-//Header
-#include "include/PackingStrategy/SimplePackingStrategy.h"
 
-////////////////////////////////////////////////////////////////////////////////
+//----------------------------------------------------------------------------//
 // Interface Methods                                                          //
-////////////////////////////////////////////////////////////////////////////////
-void SimplePackingStrategy::pack(const QVector<Image> &images)
+//----------------------------------------------------------------------------//
+void SimplePackingStrategy::Pack(const std::vector<Image> &images) noexcept
 {
     auto bigger_image = images[0];
     m_outputRects.reserve(images.size());
 
-    //Start packing...
-    m_pRootNode = std::make_shared<Node>(0, 0, bigger_image.getSize());
+    //--------------------------------------------------------------------------
+    // Start packing...
+    m_pRootNode = std::make_shared<Node>(0, 0, bigger_image.GetSize());
 
     for(int i = 0; i < images.size(); ++i)
     {
         const auto &image = images[i];
 
-        auto image_size = image.getSize();
-        auto p_node     = this->findNode(m_pRootNode, image_size);
+        auto image_size = image.GetSize();
+        auto p_node     = this->FindNode(m_pRootNode, image_size);
 
         if(!p_node)
-            p_node = this->growNode(image_size);
+            p_node = this->GrowNode(image_size);
         else
-            this->splitNode(p_node, image_size);
+            this->SplitNode(p_node, image_size);
 
         p_node->id = i;
 
-        auto rect = QRect(
-            p_node->rect.x   (),
-            p_node->rect.y   (),
-            image_size.width (),
-            image_size.height()
+        auto rect = acow::math::Rect(
+            p_node->rect.x   ,
+            p_node->rect.y   ,
+            image_size.width ,
+            image_size.height
         );
 
         m_outputRects.push_back(rect);
-    }//for
+    } // for
 
-
-    //Find the Sheet Size.
+    //--------------------------------------------------------------------------
+    // Find the Sheet Size.
     int max_w = 0;
     int max_h = 0;
-    foreach(const QRect &rect, m_outputRects)
+
+    for(const auto &rect : m_outputRects)
     {
-        auto w = rect.x() + rect.width ();
-        auto h = rect.y() + rect.height();
+        auto w = rect.x + rect.GetWidth ();
+        auto h = rect.y + rect.GetHeight();
 
         if(w > max_w) max_w = w;
         if(h > max_h) max_h = h;
     }
 
-    m_sheetSize.setWidth (max_w);
-    m_sheetSize.setHeight(max_h);
+    m_sheetSize.SetWidth (max_w);
+    m_sheetSize.SetHeight(max_h);
 }
 
-const QVector<QRect>& SimplePackingStrategy::getOutputRects() const
+const std::vector<acow::math::Rect>&
+    SimplePackingStrategy::GetOutputRects() const noexcept
 {
     return m_outputRects;
 }
 
-const QSize& SimplePackingStrategy::getSheetSize() const
+const acow::math::Size& SimplePackingStrategy::GetSheetSize() const noexcept
 {
     return m_sheetSize;
 }
 
 
-////////////////////////////////////////////////////////////////////////////////
+//----------------------------------------------------------------------------//
 // Private Methods                                                            //
-////////////////////////////////////////////////////////////////////////////////
-SimplePackingStrategy::Node::SPtr SimplePackingStrategy::findNode(
-    Node::SPtr  pNode,
-    const QSize &size)
+//----------------------------------------------------------------------------//
+SimplePackingStrategy::Node::SPtr SimplePackingStrategy::FindNode(
+    Node::SPtr              pNode,
+    const acow::math::Size &size)
 {
     if(pNode->used)
     {
-        auto p_found_node = this->findNode(pNode->pRight, size);
+        auto p_found_node = this->FindNode(pNode->pRight, size);
 
         if(p_found_node)
             return p_found_node;
 
-        return this->findNode(pNode->pDown, size);
+        return this->FindNode(pNode->pDown, size);
     }
-    else if((size.width () <= pNode->rect.width ()) &&
-            (size.height() <= pNode->rect.height()))
+    else if((size.width  <= pNode->rect.GetWidth ()) &&
+            (size.height <= pNode->rect.GetHeight()))
     {
         return pNode;
     }
@@ -129,109 +93,115 @@ SimplePackingStrategy::Node::SPtr SimplePackingStrategy::findNode(
     return nullptr;
 }
 
-SimplePackingStrategy::Node::SPtr SimplePackingStrategy::splitNode(
-    Node::SPtr  pNode,
-    const QSize &size)
+SimplePackingStrategy::Node::SPtr SimplePackingStrategy::SplitNode(
+    Node::SPtr              pNode,
+    const acow::math::Size &size)
 {
     pNode->used = true;
 
-    //Down Node.
+    //--------------------------------------------------------------------------
+    // Down Node.
     pNode->pDown = std::make_shared<Node>(
-        pNode->rect.x(),
-        pNode->rect.y() + size.height(),
-        pNode->rect.width (),
-        pNode->rect.height() - size.height()
+        pNode->rect.x,
+        pNode->rect.y + size.height,
+        pNode->rect.GetWidth (),
+        pNode->rect.GetHeight() - size.height
     );
 
-    //Right Node.
+    //--------------------------------------------------------------------------
+    // Right Node.
     pNode->pRight = std::make_shared<Node>(
-        pNode->rect.x() + size.width(),
-        pNode->rect.y(),
-        pNode->rect.width () - size.width(),
-        size.height()
+        pNode->rect.x + size.width,
+        pNode->rect.y,
+        pNode->rect.GetWidth() - size.width,
+        size.height
     );
 
     return pNode;
 }
 
 
-SimplePackingStrategy::Node::SPtr SimplePackingStrategy::growNode(
-    const QSize &size)
+SimplePackingStrategy::Node::SPtr SimplePackingStrategy::GrowNode(
+    const acow::math::Size &size)
 {
-    //Just to reduce verbosity.
-    auto root_w = m_pRootNode->rect.width ();
-    auto root_h = m_pRootNode->rect.height();
+    //--------------------------------------------------------------------------
+    // Just to reduce verbosity.
+    auto root_w = m_pRootNode->rect.GetWidth ();
+    auto root_h = m_pRootNode->rect.GetHeight();
 
-    auto can_grow_down  = (size.width () <= root_w);
-    auto can_grow_right = (size.height() <= root_h);
+    auto can_grow_down  = (size.width  <= root_w);
+    auto can_grow_right = (size.height <= root_h);
 
-    //Attempt to keep square-ish by growing right
-    //when height is much greater than width
+    //--------------------------------------------------------------------------
+    // Attempt to keep square-ish by growing right
+    // when height is much greater than width
     auto should_grow_right = can_grow_right &&
-                             (root_h >= (root_w + size.width()));
+                             (root_h >= (root_w + size.width));
 
-    //Attempt to keep square-ish by growing down
-    //when width is much greater than height
+    //--------------------------------------------------------------------------
+    // Attempt to keep square-ish by growing down
+    // when width is much greater than height
     auto should_grow_down = can_grow_down &&
-                            (root_w >= (root_h + size.height()));
+                            (root_w >= (root_h + size.height));
 
-    if     (should_grow_right) return this->growNode_Right(size);
-    else if(should_grow_down ) return this->growNode_Down (size);
-    else if(can_grow_right   ) return this->growNode_Right(size);
-    else if(can_grow_down    ) return this->growNode_Down (size);
+    if     (should_grow_right) return this->GrowNode_Right(size);
+    else if(should_grow_down ) return this->GrowNode_Down (size);
+    else if(can_grow_right   ) return this->GrowNode_Right(size);
+    else if(can_grow_down    ) return this->GrowNode_Down (size);
     else                       return nullptr;
 }
 
-SimplePackingStrategy::Node::SPtr SimplePackingStrategy::growNode_Right(
-    const QSize &size)
+SimplePackingStrategy::Node::SPtr SimplePackingStrategy::GrowNode_Right(
+    const acow::math::Size &size)
 {
     auto p_new_root = std::make_shared<Node>(
         0, 0,
-        m_pRootNode->rect.width() + size.width(),
-        m_pRootNode->rect.height()
+        m_pRootNode->rect.GetWidth () + size.width,
+        m_pRootNode->rect.GetHeight()
     );
 
     p_new_root->used   = true;
     p_new_root->pDown  = m_pRootNode;
     p_new_root->pRight = std::make_shared<Node>(
-        m_pRootNode->rect.size().width(),
+        m_pRootNode->rect.GetWidth(),
         0,
-        size.width(),
-        m_pRootNode->rect.height()
+        size.width,
+        m_pRootNode->rect.GetHeight()
     );
 
     m_pRootNode = p_new_root;
 
-    auto p_node = this->findNode(m_pRootNode, size);
+    auto p_node = this->FindNode(m_pRootNode, size);
     if(p_node)
-        return this->splitNode(p_node, size);
+        return this->SplitNode(p_node, size);
 
     return nullptr;
 }
 
-SimplePackingStrategy::Node::SPtr SimplePackingStrategy::growNode_Down(
-    const QSize &size)
+SimplePackingStrategy::Node::SPtr SimplePackingStrategy::GrowNode_Down(
+    const acow::math::Size &size)
 {
     auto p_new_root = std::make_shared<Node>(
         0, 0,
-        m_pRootNode->rect.width(),
-        m_pRootNode->rect.height() + size.height()
+        m_pRootNode->rect.GetWidth(),
+        m_pRootNode->rect.GetHeight() + size.height
     );
 
     p_new_root->used   = true;
     p_new_root->pRight = m_pRootNode;
     p_new_root->pDown  = std::make_shared<Node>(
         0,
-        m_pRootNode->rect.height(),
-        m_pRootNode->rect.width (),
-        size.height()
+        m_pRootNode->rect.GetHeight(),
+        m_pRootNode->rect.GetWidth (),
+        size.height
+
     );
 
     m_pRootNode = p_new_root;
 
-    auto p_node = this->findNode(m_pRootNode, size);
+    auto p_node = this->FindNode(m_pRootNode, size);
     if(p_node)
-        return this->splitNode(p_node, size);
+        return this->SplitNode(p_node, size);
 
     return nullptr;
 }

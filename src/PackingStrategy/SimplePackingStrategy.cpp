@@ -5,20 +5,20 @@
 //----------------------------------------------------------------------------//
 // Interface Methods                                                          //
 //----------------------------------------------------------------------------//
-void SimplePackingStrategy::Pack(const std::vector<Image> &images) noexcept
+void SimplePackingStrategy::Pack(const std::vector<Image::SPtr> &images) noexcept
 {
-    auto bigger_image = images[0];
+    auto p_bigger_image = images[0].get();
     m_outputRects.reserve(images.size());
 
     //--------------------------------------------------------------------------
     // Start packing...
-    m_pRootNode = std::make_shared<Node>(0, 0, bigger_image.GetSize());
+    m_pRootNode = std::make_shared<Node>(0, 0, p_bigger_image->GetSize());
 
     for(int i = 0; i < images.size(); ++i)
     {
-        const auto &image = images[i];
+        const auto p_image = images[i].get();
 
-        auto image_size = image.GetSize();
+        auto image_size = p_image->GetSize();
         auto p_node     = this->FindNode(m_pRootNode, image_size);
 
         if(!p_node)

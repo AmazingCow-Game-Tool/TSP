@@ -13,6 +13,13 @@ class SimplePackingStrategy :
     public IPackingStrategy
 {
     //------------------------------------------------------------------------//
+    // Enums / Constants / Typedefs                                           //
+    //------------------------------------------------------------------------//
+public:
+    ACOW_SMART_PTRS_OF(SimplePackingStrategy);
+
+
+    //------------------------------------------------------------------------//
     // Inner Types                                                            //
     //------------------------------------------------------------------------//
 private:
@@ -55,14 +62,16 @@ private:
     // Interface Methods                                                      //
     //------------------------------------------------------------------------//
 public:
-    void Pack(const std::vector<Image> &images) noexcept override;
+    void Pack(const std::vector<Image::SPtr> &images) noexcept override;
 
     const std::vector<acow::math::Rect>& GetOutputRects() const noexcept override;
 
     const acow::math::Size& GetSheetSize() const noexcept override;
 
 
-    // Private Methods //
+    //------------------------------------------------------------------------//
+    // Private Methods                                                        //
+    //------------------------------------------------------------------------//
 private:
     Node::SPtr FindNode (Node::SPtr pNode, const acow::math::Size &size);
     Node::SPtr SplitNode(Node::SPtr pNode, const acow::math::Size &size);
@@ -72,7 +81,9 @@ private:
     Node::SPtr GrowNode_Down (const acow::math::Size &size);
 
 
-    // iVars //
+    //------------------------------------------------------------------------//
+    // iVars                                                                  //
+    //------------------------------------------------------------------------//
 private:
     Node::SPtr                    m_pRootNode;
     acow::math::Size              m_sheetSize;

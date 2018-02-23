@@ -1,36 +1,30 @@
 #pragma once
 
-// std
-#include <vector>
-// AmazingCow Libs
-#include "acow/math_goodies.h"
 // TSP
-#include "include/Image/Images.h"
+#include "include/SheetRectWriter/Interface/ISheetRectWriter.h"
 
 
-class IPackingStrategy
+class CooperSheetRectWriter
+    : public ISheetRectWriter
 {
     //------------------------------------------------------------------------//
     // Enums / Constants / Typedefs                                           //
     //------------------------------------------------------------------------//
 public:
-    ACOW_SMART_PTRS_OF(IPackingStrategy);
+    ACOW_SMART_PTRS_OF(CooperSheetRectWriter);
 
 
     //------------------------------------------------------------------------//
     // CTOR / DTOR                                                            //
     //------------------------------------------------------------------------//
 public:
-    virtual ~IPackingStrategy() = default;
+    virtual ~CooperSheetRectWriter() = default;
 
 
     //------------------------------------------------------------------------//
     // Interface Methods                                                      //
     //------------------------------------------------------------------------//
 public:
-    virtual void Pack(const std::vector<Image::SPtr> &images) noexcept = 0;
+    void Write(const SheetWriterOptions &options) const override;
 
-    virtual const std::vector<acow::math::Rect>& GetOutputRects() const noexcept = 0;
-
-    virtual const acow::math::Size& GetSheetSize() const noexcept = 0;
-};
+}; // class CooperSheetSheetRectWriter

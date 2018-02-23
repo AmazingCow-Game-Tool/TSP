@@ -1,10 +1,11 @@
 #pragma once
 
-// std
-#include <string>
-#include <vector>
+// TSP
+#include "include/ImageFinder/Interface/IImageFinder.h"
 
-class ImageFinder
+
+class DirectoryImageFinder
+    : public IImageFinder
 {
     //------------------------------------------------------------------------//
     // Inner Types                                                            //
@@ -12,24 +13,28 @@ class ImageFinder
 public:
     struct Options
     {
-        std::string              startPath;
-        std::vector<std::string> ignorePaths;
-        std::vector<std::string> allowedFiletypes;
-    };
+        // Path.
+        std::string              path_InitialPath;
+        std::vector<std::string> path_IgnorePaths;
+
+        // Extension.
+        std::vector<std::string> ext_Allowed;
+
+    }; // struct Options;
 
 
     //------------------------------------------------------------------------//
     // CTOR                                                                   //
     //------------------------------------------------------------------------//
 public:
-    ImageFinder(const Options &options);
+    explicit DirectoryImageFinder(const Options &options) noexcept;
 
 
     //------------------------------------------------------------------------//
-    // Public Methods                                                         //
+    // Interface Methods                                                      //
     //------------------------------------------------------------------------//
 public:
-    std::vector<std::string> findImagesPaths();
+    std::vector<std::string> FindImagesPaths() noexcept override;
 
 
     //------------------------------------------------------------------------//
@@ -38,4 +43,5 @@ public:
 private:
     Options                  m_options;
     std::vector<std::string> m_imagePaths;
-};
+
+}; // class ImageFinder

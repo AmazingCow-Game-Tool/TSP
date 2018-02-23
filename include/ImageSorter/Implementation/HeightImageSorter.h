@@ -10,9 +10,16 @@ class HeightImageSorter :
     // Interface Methods                                                      //
     //------------------------------------------------------------------------//
 public:
-    int Sort(const Image &img1, const Image &img2) const noexcept override
+      int Sort(
+        const Image::SPtr &pImg1,
+        const Image::SPtr &pImg2) const noexcept override
     {
-        return img1.GetSize().height - img2.GetSize().height;
+        // Sanity Checks.
+        COREASSERT_ASSERT(pImg1, "pImg1 can't be null");
+        COREASSERT_ASSERT(pImg2, "pImg2 can't be null");
+
+        // Implementation.
+        return pImg1->GetSize().height - pImg2->GetSize().height;
     }
 
 }; // class HeightImageSorter

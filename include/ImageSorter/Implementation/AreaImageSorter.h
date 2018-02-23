@@ -1,5 +1,7 @@
 #pragma once
 
+// AmazingCow Libs
+#include "CoreAssert/CoreAssert.h"
 // TSP
 #include "include/ImageSorter/Interface/IImageSorter.h"
 
@@ -10,10 +12,17 @@ class AreaImageSorter :
     // Interface Methods                                                      //
     //------------------------------------------------------------------------//
 public:
-    int Sort(const Image &img1, const Image &img2) const noexcept override
+    int Sort(
+        const Image::SPtr &pImg1,
+        const Image::SPtr &pImg2) const noexcept override
     {
-        auto &s1 = img1.GetSize();
-        auto &s2 = img2.GetSize();
+        // Sanity Checks.
+        COREASSERT_ASSERT(pImg1, "pImg1 can't be null");
+        COREASSERT_ASSERT(pImg2, "pImg2 can't be null");
+
+        // Implementation.
+        auto &s1 = pImg1->GetSize();
+        auto &s2 = pImg2->GetSize();
 
         return (s1.width * s1.height) - (s2.width * s2.height);
     }

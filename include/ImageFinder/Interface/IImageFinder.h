@@ -1,21 +1,25 @@
 #pragma once
 
-// TSP
-#include "include/SheetWriterOptions/SheetWriterOptions.h"
+// std
+#include <string>
+#include <vector>
+// AmazingCow Libs
+#include "acow/cpp_goodies.h"
 
 
-class ISheetRectWriter
+class IImageFinder
 {
     //------------------------------------------------------------------------//
-    // CTOR / DTOR                                                            //
+    // Enums / Constants / Typedef                                            //
     //------------------------------------------------------------------------//
 public:
-    virtual ~ISheetRectWriter() = default;
+    ACOW_SMART_PTRS_OF(IImageFinder);
+
 
     //------------------------------------------------------------------------//
     // Interface Methods                                                      //
     //------------------------------------------------------------------------//
 public:
-    virtual void Write(const SheetWriterOptions &options) const = 0;
+    virtual std::vector<std::string> FindImagesPaths() noexcept = 0;
 
-}; // ISheetRectWriter
+}; // class IImageFinder

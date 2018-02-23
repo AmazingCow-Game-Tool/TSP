@@ -6,7 +6,7 @@
 // AmazingCow Libs
 #include "acow/math_goodies.h"
 // TSP
-#include "include/Image.h"
+#include "include/Image/Images.h"
 
 
 struct SheetWriterOptions
@@ -16,7 +16,7 @@ struct SheetWriterOptions
 
     std::string outputPath;
 
-    std::vector<Image>            images;
+    std::vector<Image::SPtr>      images;
     std::vector<acow::math::Rect> rects;
 
     acow::math::Size sheetSize;

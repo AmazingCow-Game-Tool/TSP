@@ -1,20 +1,32 @@
 #pragma once
 
+// AmazingCow Libs
+#include "acow/cpp_goodies.h"
 // TSP
-#include "include/Image.h"
+#include "include/Image/Images.h"
 
 class IImageSorter
 {
+    //------------------------------------------------------------------------//
+    // Enums / Constants / Typedefs                                           //
+    //------------------------------------------------------------------------//
+public:
+    ACOW_SMART_PTRS_OF(IImageSorter);
+
+
     //------------------------------------------------------------------------//
     // CTOR / DTOR                                                            //
     //------------------------------------------------------------------------//
 public:
     virtual ~IImageSorter() = default;
 
+
     //------------------------------------------------------------------------//
     // Interface Methods                                                      //
     //------------------------------------------------------------------------//
 public:
-    virtual int Sort(const Image &img1, const Image &img2) const noexcept = 0;
+    virtual int Sort(
+        const Image::SPtr &pImg1,
+        const Image::SPtr &pImg2) const noexcept = 0;
 
 }; // class IImageSorter

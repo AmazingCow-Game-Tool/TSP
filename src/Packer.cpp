@@ -13,58 +13,60 @@ Packer::Packer(const Options &options) :
 }
 
 //
-void Packer::setImages(const std::vector<Image> &images)
+void Packer::SetImages(const std::vector<Image::SPtr> &images)
 {
     m_images = images;
 }
 
 //
-void Packer::setSortMethod(std::unique_ptr<IImageSorter> pImageSorter)
+void Packer::SetSortMethod(IImageSorter *pImageSorter)
 {
-    m_pImageSorter = std::move(pImageSorter);
+    COREASSERT_ASSERT(pImageSorter, "pImageSorter can't be null");
+    m_pImageSorter = pImageSorter;
 }
 
-void Packer::setPackingMethod(std::unique_ptr<IPackingStrategy> pPackingStrategy)
+void Packer::SetPackingMethod(IPackingStrategy *pPackingStrategy)
 {
-    m_pPackingStrategy = std::move(pPackingStrategy);
+    COREASSERT_ASSERT(pPackingStrategy, "pPackingStrategy can't be null");
+    m_pPackingStrategy = pPackingStrategy;
 }
-//
-//void Packer::setSheetImageWriter(
-//    std::unique_ptr<ISheetImageWriter> pSheetImageWriter)
-//{
-//    m_pSheetImageWriter = std::move(pSheetImageWriter);
-//}
-//
-//void Packer::setSheetRectWriter(
-//    std::unique_ptr<ISheetRectWriter> pSheetRectWriter)
-//{
-//    m_pSheetRectWriter = std::move(pSheetRectWriter);
-//}
+
+void Packer::SetSheetImageWriter(ISheetImageWriter *pSheetImageWriter)
+{
+    COREASSERT_ASSERT(pSheetImageWriter, "pSheetImageWriter can't be null");
+    m_pSheetImageWriter = pSheetImageWriter;
+}
+
+void Packer::SetSheetRectWriter(ISheetRectWriter *pSheetRectWriter)
+{
+    COREASSERT_ASSERT(pSheetRectWriter, "pSheetRectWriter can't be null");
+    m_pSheetRectWriter = pSheetRectWriter;
+}
 
 
 //
-void Packer::pack()
+void Packer::Pack()
 {
     //--------------------------------------------------------------------------
     // Sort the images.
     std::sort(
         m_images.begin(),
         m_images.end  (),
-        [this](const Image &i1, const Image &i2) {
+        [this](const Image::SPtr &i1, const Image::SPtr &i2) {
             return m_pImageSorter->Sort(i1, i2) > 0;
         }
     );
 
     //--------------------------------------------------------------------------
-    // Pack
+    // Pack.
     m_pPackingStrategy->Pack(m_images);
 
     //--------------------------------------------------------------------------
-    // Setup the Writer Options
+    // Setup the Writer Options.
     auto writer_options = SheetWriterOptions {
-        .imageOutputFilename = m_options.imgFilename,
-        .dataOutputFilename  = m_options.dataFilename,
-        .outputPath          = m_options.outputPath,
+        .imageOutputFilename = m_options.sheet_ImageFilename,
+        .dataOutputFilename  = m_options.sheet_DataFilename,
+        .outputPath          = m_options.sheet_OutputPath,
 
         .images    = m_images,
         .rects     = m_pPackingStrategy->GetOutputRects(),
@@ -72,7 +74,7 @@ void Packer::pack()
     };
 
     //--------------------------------------------------------------------------
-    // Write...
+    // Write.
     m_pSheetImageWriter->Write(writer_options);
     m_pSheetRectWriter ->Write(writer_options);
 }

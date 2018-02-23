@@ -7,3 +7,9 @@
 [submodule "lib/CoreAssert"]
 	path = lib/CoreAssert
 	url = https://github.com/AmazingCow-Libs/CoreAssert
+[submodule "lib/CoreFS"]
+	path = lib/CoreFS
+	url = https://github.com/AmazingCow-Libs/CoreFS
+[submodule "lib/CoreDir"]
+	path = lib/CoreDir
+	url = https://github.com/AmazingCow-Libs/CoreDir

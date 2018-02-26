@@ -13,3 +13,12 @@
 [submodule "lib/CoreDir"]
 	path = lib/CoreDir
 	url = https://github.com/AmazingCow-Libs/CoreDir
+[submodule "lib/CoreINI"]
+	path = lib/CoreINI
+	url = https://github.com/AmazingCow-Libs/CoreINI
+[submodule "lib/CoreFile"]
+	path = lib/CoreFile
+	url = https://github.com/AmazingCow-Libs/CoreFile
+[submodule "lib/CoreString"]
+	path = lib/CoreString
+	url = https://github.com/AmazingCow-Libs/CoreString

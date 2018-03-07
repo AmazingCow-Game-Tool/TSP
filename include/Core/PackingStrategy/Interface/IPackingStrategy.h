@@ -17,6 +17,14 @@ class IPackingStrategy
 public:
     ACOW_SMART_PTRS_OF(IPackingStrategy);
 
+    //------------------------------------------------------------------------//
+    // Inner Types                                                            //
+    //------------------------------------------------------------------------//
+public:
+    struct PackResults {
+        std::vector<acow::math::Rect> rects;
+        acow::math::Size              sheet_Size;
+    };
 
     //------------------------------------------------------------------------//
     // CTOR / DTOR                                                            //
@@ -29,11 +37,7 @@ public:
     // Interface Methods                                                      //
     //------------------------------------------------------------------------//
 public:
-    virtual void Pack(const std::vector<Image::SPtr> &images) noexcept = 0;
-
-    virtual const std::vector<acow::math::Rect>& GetOutputRects() const noexcept = 0;
-
-    virtual const acow::math::Size& GetSheetSize() const noexcept = 0;
+    virtual PackResults Pack(const std::vector<Image::SPtr> &images) noexcept = 0;
 
 }; // class IPackingStrategy
 

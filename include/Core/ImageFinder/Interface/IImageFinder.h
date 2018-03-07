@@ -21,7 +21,7 @@ public:
     // Interface Methods                                                      //
     //------------------------------------------------------------------------//
 public:
-    virtual std::vector<std::string> FindImagesPaths() noexcept = 0;
+    virtual std::vector<std::string> FindImagesPaths() = 0;
 
 }; // class IImageFinder
 

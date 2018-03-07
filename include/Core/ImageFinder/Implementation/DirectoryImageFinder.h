@@ -35,7 +35,7 @@ public:
     // Interface Methods                                                      //
     //------------------------------------------------------------------------//
 public:
-    std::vector<std::string> FindImagesPaths() noexcept override;
+    std::vector<std::string> FindImagesPaths() override;
 
 
     //------------------------------------------------------------------------//

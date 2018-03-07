@@ -1,5 +1,7 @@
 #pragma once
 
+// acow_cpp_goodies
+#include "acow/cpp_goodies.h"
 // TSP
 #include "include/Core/Image/Images.h"
 
@@ -7,6 +9,13 @@ namespace TSP { namespace Core {
 
 class IImageSorter
 {
+    //------------------------------------------------------------------------//
+    // Enums / Constants / Typedefs                                           //
+    //------------------------------------------------------------------------//
+public:
+    ACOW_UNIQUE_PTR_OF(IImageSorter);
+
+
     //------------------------------------------------------------------------//
     // CTOR / DTOR                                                            //
     //------------------------------------------------------------------------//

@@ -39,5 +39,11 @@ struct RunInfo
 
 }; // struct RunInfo
 
+
+//----------------------------------------------------------------------------//
+// Functions                                                                  //
+//----------------------------------------------------------------------------//
+RunInfo ParseCommandLine(int argc, char *argv[]);
+
 }  // namespace Core
 }  // namespace TSP

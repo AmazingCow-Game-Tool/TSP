@@ -66,6 +66,8 @@ UI::InitLean()
     if(s_lean_inited)
         return;
 
+    s_lean_inited = true;
+
     //--------------------------------------------------------------------------
     // Init subsystems.
     Logger()->D("Initializing subsystems.");

@@ -5,6 +5,7 @@
 #include "acow/sdl_goodies.h"
 // TSP
 #include "include/UI/UI.h"
+#include "include/Core/private/Logger.h"
 
 // Usings
 using namespace TSP;
@@ -36,6 +37,15 @@ Image::SPtr Image::LoadFromFile(const std::string &filePath)
     p_image->m_size     = acow::sdl::Texture::QuerySize(p_texture);
     p_image->m_path     = fullpath;
 
+    //--------------------------------------------------------------------------
+    // Log.
+    Core::Logger()->Debug(
+        "Loaded image - Path: (%s) - Size: (%.1f, %.1f)",
+        p_image->m_path,
+        p_image->m_size.GetWidth(),
+        p_image->m_size.GetWeight()
+    );
+
     return p_image;
 }
 
@@ -45,5 +55,11 @@ Image::SPtr Image::LoadFromFile(const std::string &filePath)
 //----------------------------------------------------------------------------//
 Image::~Image()
 {
+    COREASSERT_ASSERT(
+        m_pTexture,
+        "Invalid dealocation - m_pTexture can't be null"
+    );
+
+    Core::Logger()->Debug("Releasing texture of image - Path: (%s)", m_path);
     ACOW_SDL_SAFE_DESTROY_TEXTURE(m_pTexture);
 }

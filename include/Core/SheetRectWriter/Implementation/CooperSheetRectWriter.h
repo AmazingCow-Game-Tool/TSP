@@ -2,6 +2,7 @@
 
 // TSP
 #include "include/Core/SheetRectWriter/Interface/ISheetRectWriter.h"
+#include "include/Core/Image/Images.h"
 
 namespace TSP { namespace Core {
 
@@ -26,7 +27,13 @@ public:
     // Interface Methods                                                      //
     //------------------------------------------------------------------------//
 public:
-    void Write(const SheetWriterOptions &options) const override;
+    void Write(
+        const std::vector<Image::SPtr>      &images,
+        const std::vector<acow::math::Rect> &rects,
+        const acow::math::Size              &sheetSizeNeeded,
+        bool                                 forcePOT,
+        bool                                 forceSquare,
+        const std::string                   &outputFullpath) const override;
 
 }; // class CooperSheetSheetRectWriter
 

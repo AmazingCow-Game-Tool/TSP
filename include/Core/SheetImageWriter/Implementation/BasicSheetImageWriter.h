@@ -15,7 +15,10 @@ public:
     void Write(
         const std::vector<Image::SPtr>      &images,
         const std::vector<acow::math::Rect> &rects,
-        const SheetWriterOptions            &options) const noexcept override;
+        const acow::math::Size              &sheetSizeNeeded,
+        bool                                 forcePOT,
+        bool                                 forceSquare,
+        const std::string                   &outputFullpath) const noexcept override;
 
 }; // class BasicSheetImageWriter
 

@@ -11,6 +11,7 @@
 using namespace TSP;
 using namespace Core;
 
+
 //----------------------------------------------------------------------------//
 // Interface Methods                                                          //
 //----------------------------------------------------------------------------//
@@ -18,7 +19,10 @@ void
 BasicSheetImageWriter::Write(
     const std::vector<Image::SPtr>      &images,
     const std::vector<acow::math::Rect> &rects,
-    const SheetWriterOptions            &options) const noexcept
+    const acow::math::Size              &sheetSizeNeeded,
+    bool                                 forcePOT,
+    bool                                 forceSquare,
+    const std::string                   &outputFullpath) const noexcept
 {
     //--------------------------------------------------------------------------
     // Sanity checks...
@@ -34,15 +38,15 @@ BasicSheetImageWriter::Write(
 
     //--------------------------------------------------------------------------
     // Compute the final size of image.
-    auto final_width = (options.size_ForcePOT)
-        ? acow::math::ClosestPOT(options.size_SheetNeeded.width)
-        : options.size_SheetNeeded.width;
+    auto final_width = (forcePOT)
+        ? acow::math::ClosestPOT(sheetSizeNeeded.width)
+        : sheetSizeNeeded.width;
 
-    auto final_height = (options.size_ForcePOT)
-        ? acow::math::ClosestPOT(options.size_SheetNeeded.height)
-        : options.size_SheetNeeded.height;
+    auto final_height = (forcePOT)
+        ? acow::math::ClosestPOT(sheetSizeNeeded.height)
+        : sheetSizeNeeded.height;
 
-    if(options.size_ForceSquare)
+    if(forceSquare)
         final_width = final_height = acow::math::Max(final_width, final_height);
 
     //--------------------------------------------------------------------------
@@ -103,17 +107,10 @@ BasicSheetImageWriter::Write(
 
     //--------------------------------------------------------------------------
     // Save the image.
-    auto filename   = options.filename_OutputImage;
-    auto outpath    = CoreFS::ExpandUserAndMakeAbs(options.path_Output);
-    auto final_path = CoreFS::Join(outpath, {filename});
+    acow::sdl::Surface::Save(outputFullpath, p_surface.get());
 
-    final_path = CoreFS::ChangeExtension(final_path, "png");
-
-    if(!CoreFS::IsDir(outpath))
-         CoreDir::CreateDirectory(outpath);
-
-    acow::sdl::Surface::Save(final_path, p_surface.get());
-
+    //--------------------------------------------------------------------------
+    // Free the resources.
     ACOW_SAFE_FREE(p_pixel_data_arr);
     SDL_SetRenderTarget(p_renderer_ref, nullptr);
 }

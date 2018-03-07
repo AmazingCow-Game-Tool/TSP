@@ -14,7 +14,13 @@ using namespace Core;
 // Interface Methods                                                          //
 //----------------------------------------------------------------------------//
 void
-CooperSheetRectWriter::Write(const SheetWriterOptions &options) const
+CooperSheetRectWriter::Write(
+    const std::vector<Image::SPtr>      &images,
+    const std::vector<acow::math::Rect> &rects,
+    const acow::math::Size              &sheetSizeNeeded,
+    bool                                 forcePOT,
+    bool                                 forceSquare,
+    const std::string                   &outputFullpath) const
 {
     // CoreIni::Ini ini;
 

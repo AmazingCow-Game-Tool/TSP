@@ -3,7 +3,7 @@
 // AmazingCow Libs
 #include "acow/cpp_goodies.h"
 // TSP
-#include "include/Core/SheetWriterOptions/SheetWriterOptions.h"
+#include "include/Core/Image/Images.h"
 
 namespace TSP { namespace Core {
 
@@ -27,7 +27,13 @@ public:
     // Interface Methods                                                      //
     //------------------------------------------------------------------------//
 public:
-    virtual void Write(const SheetWriterOptions &options) const = 0;
+    virtual void Write(
+        const std::vector<Image::SPtr>      &images,
+        const std::vector<acow::math::Rect> &rects,
+        const acow::math::Size              &sheetSizeNeeded,
+        bool                                 forcePOT,
+        bool                                 forceSquare,
+        const std::string                   &outputFullpath) const = 0;
 
 }; // class ISheetRectWriter
 

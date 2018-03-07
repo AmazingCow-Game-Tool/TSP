@@ -1,10 +1,10 @@
 #pragma once
 
 // std
+#include <string>
 #include <vector>
 // TSP
 #include "include/Core/Image/Images.h"
-#include "include/Core/ImageFinder/ImageFinders.h"
 
 namespace TSP { namespace Core {
 
@@ -20,7 +20,8 @@ public:
     // Interface Methods                                                      //
     //------------------------------------------------------------------------//
 public:
-    virtual std::vector<Image::SPtr> LoadImages(IImageFinder::SPtr pImageFinder) = 0;
+    virtual std::vector<Image::SPtr> LoadImages(
+        const std::vector<std::string> &paths) = 0;
 
 }; // class IImageLoader
 

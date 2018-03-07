@@ -1,5 +1,7 @@
 // Header
 #include "include/Core/ImageLoader/Implementation/ImageLoader.h"
+// TSP
+#include "include/Core/private/Logger.h"
 
 // Usings
 using namespace TSP;
@@ -10,17 +12,22 @@ using namespace Core;
 // Interface Methods                                                          //
 //----------------------------------------------------------------------------//
 std::vector<Image::SPtr>
-ImageLoader::LoadImages(IImageFinder::SPtr pImageFinder)
+ImageLoader::LoadImages(const std::vector<std::string> &paths)
 {
-    auto image_paths = pImageFinder->FindImagesPaths();
-    auto images      = std::vector<Image::SPtr>();
+    auto images = std::vector<Image::SPtr>();
+    images.reserve(paths.size());
 
-    images.reserve(image_paths.size());
-
-    for(const auto &path : image_paths)
+    Core::Logger()->Debug("Starting loading (%d) images.", paths.size());
+    for(const auto &path : paths)
     {
+        Core::Logger()->Debug(
+            "Loading Image (%d/%d) - Path: (%s)",
+            images.size() +1,
+            paths.size(),
+            path
+        );
         auto p_image = Image::LoadFromFile(path);
-        images.push_back(std::move(p_image));
+        images.push_back(p_image);
     }
 
     return images;

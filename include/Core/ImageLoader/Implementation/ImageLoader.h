@@ -15,7 +15,8 @@ class ImageLoader
     // Public Methods                                                         //
     //------------------------------------------------------------------------//
 public:
-    std::vector<Image::SPtr> LoadImages(IImageFinder::SPtr pImageFinder) override;
+    std::vector<Image::SPtr> LoadImages(
+        const std::vector<std::string> &paths) override;
 
 }; // class ImageLoader
 

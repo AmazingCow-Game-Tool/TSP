@@ -1,11 +1,16 @@
 // Header
-#include "include/PackingStrategy/Implementation/SimplePackingStrategy.h"
+#include "include/Core/PackingStrategy/Implementation/SimplePackingStrategy.h"
+
+// Usings
+using namespace TSP;
+using namespace Core;
 
 
 //----------------------------------------------------------------------------//
 // Interface Methods                                                          //
 //----------------------------------------------------------------------------//
-void SimplePackingStrategy::Pack(const std::vector<Image::SPtr> &images) noexcept
+void
+SimplePackingStrategy::Pack(const std::vector<Image::SPtr> &images) noexcept
 {
     auto p_bigger_image = images[0].get();
     m_outputRects.reserve(images.size());
@@ -57,12 +62,13 @@ void SimplePackingStrategy::Pack(const std::vector<Image::SPtr> &images) noexcep
 }
 
 const std::vector<acow::math::Rect>&
-    SimplePackingStrategy::GetOutputRects() const noexcept
+SimplePackingStrategy::GetOutputRects() const noexcept
 {
     return m_outputRects;
 }
 
-const acow::math::Size& SimplePackingStrategy::GetSheetSize() const noexcept
+const acow::math::Size&
+SimplePackingStrategy::GetSheetSize() const noexcept
 {
     return m_sheetSize;
 }
@@ -71,7 +77,8 @@ const acow::math::Size& SimplePackingStrategy::GetSheetSize() const noexcept
 //----------------------------------------------------------------------------//
 // Private Methods                                                            //
 //----------------------------------------------------------------------------//
-SimplePackingStrategy::Node::SPtr SimplePackingStrategy::FindNode(
+SimplePackingStrategy::Node::SPtr
+SimplePackingStrategy::FindNode(
     Node::SPtr              pNode,
     const acow::math::Size &size)
 {
@@ -93,7 +100,8 @@ SimplePackingStrategy::Node::SPtr SimplePackingStrategy::FindNode(
     return nullptr;
 }
 
-SimplePackingStrategy::Node::SPtr SimplePackingStrategy::SplitNode(
+SimplePackingStrategy::Node::SPtr
+SimplePackingStrategy::SplitNode(
     Node::SPtr              pNode,
     const acow::math::Size &size)
 {
@@ -121,7 +129,8 @@ SimplePackingStrategy::Node::SPtr SimplePackingStrategy::SplitNode(
 }
 
 
-SimplePackingStrategy::Node::SPtr SimplePackingStrategy::GrowNode(
+SimplePackingStrategy::Node::SPtr
+SimplePackingStrategy::GrowNode(
     const acow::math::Size &size)
 {
     //--------------------------------------------------------------------------
@@ -151,7 +160,8 @@ SimplePackingStrategy::Node::SPtr SimplePackingStrategy::GrowNode(
     else                       return nullptr;
 }
 
-SimplePackingStrategy::Node::SPtr SimplePackingStrategy::GrowNode_Right(
+SimplePackingStrategy::Node::SPtr
+SimplePackingStrategy::GrowNode_Right(
     const acow::math::Size &size)
 {
     auto p_new_root = std::make_shared<Node>(
@@ -178,7 +188,8 @@ SimplePackingStrategy::Node::SPtr SimplePackingStrategy::GrowNode_Right(
     return nullptr;
 }
 
-SimplePackingStrategy::Node::SPtr SimplePackingStrategy::GrowNode_Down(
+SimplePackingStrategy::Node::SPtr
+SimplePackingStrategy::GrowNode_Down(
     const acow::math::Size &size)
 {
     auto p_new_root = std::make_shared<Node>(

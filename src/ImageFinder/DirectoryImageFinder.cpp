@@ -1,8 +1,12 @@
 // Header
-#include "include/ImageFinder/Implementation/DirectoryImageFinder.h"
+#include "include/Core/ImageFinder/Implementation/DirectoryImageFinder.h"
 // AmazingCow Libs
 #include "CoreFS/CoreFS.h"
 #include "CoreDir/CoreDir.h"
+
+// Usings
+using namespace TSP;
+using namespace Core;
 
 
 //----------------------------------------------------------------------------//
@@ -18,7 +22,8 @@ DirectoryImageFinder::DirectoryImageFinder(const Options &options) noexcept
 //----------------------------------------------------------------------------//
 // Public Methods                                                             //
 //----------------------------------------------------------------------------//
-std::vector<std::string> DirectoryImageFinder::FindImagesPaths() noexcept
+std::vector<std::string>
+DirectoryImageFinder::FindImagesPaths() noexcept
 {
     auto initial_path = CoreFS::AbsPath(
         CoreFS::ExpandUser(m_options.path_InitialPath)

@@ -1,11 +1,16 @@
 // Header
-#include "include/ImageLoader/Implementation/ImageLoader.h"
+#include "include/Core/ImageLoader/Implementation/ImageLoader.h"
+
+// Usings
+using namespace TSP;
+using namespace Core;
 
 
 //----------------------------------------------------------------------------//
 // Interface Methods                                                          //
 //----------------------------------------------------------------------------//
-std::vector<Image::SPtr> ImageLoader::LoadImages(IImageFinder::SPtr pImageFinder)
+std::vector<Image::SPtr>
+ImageLoader::LoadImages(IImageFinder::SPtr pImageFinder)
 {
     auto image_paths = pImageFinder->FindImagesPaths();
     auto images      = std::vector<Image::SPtr>();

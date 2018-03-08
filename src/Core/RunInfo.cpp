@@ -312,6 +312,10 @@ get_results_group_directories(Core::RunInfo *pRunInfo) noexcept
         pRunInfo->dirs_Images = g_pFlagDirsImages->GetValues();
 
     acow::algo::sort_and_unique(pRunInfo->dirs_Images);
+    acow::algo::for_each(pRunInfo->dirs_Images, [](std::string &path){
+        path = CoreFS::ExpandUserAndMakeAbs(path);
+    });
+
     if(pRunInfo->dirs_Images.empty())
         pRunInfo->dirs_Images.push_back(CoreFS::CurrentDirectory());
 

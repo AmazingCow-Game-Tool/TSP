@@ -218,6 +218,7 @@ SimplePackingStrategy::Pack(const std::vector<Image::SPtr> &images) noexcept
     for(int i = 0; i < images.size(); ++i)
     {
         auto p_image = images[i];
+        COREASSERT_ASSERT(p_image, "p_image can't be null - Index: (%d)", i);
 
         auto image_size = p_image->GetSize();
         auto p_node     = node_find(g_pRootNode, image_size);

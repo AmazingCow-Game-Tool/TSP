@@ -1,6 +1,8 @@
 #pragma mark
 // std
 #include <string>
+// AmazingCow Libs
+#include "acow/cpp_goodies.h"
 // TSP
 #include "include/Core/ImageSorter/Interface/IImageSorter.h"
 

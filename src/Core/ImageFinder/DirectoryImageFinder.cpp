@@ -56,8 +56,7 @@ DirectoryImageFinder::FindImagesPaths()
             initial_path.empty(),
             std::logic_error,
             "Path can't be empty - Index: (%d)",
-            i,
-            initial_path
+            i
         );
 
         //----------------------------------------------------------------------
@@ -68,7 +67,7 @@ DirectoryImageFinder::FindImagesPaths()
             std::logic_error,
             "Path doesn't no refer to a directory - Index: (%d) - Path: (%s)",
             i,
-            initial_path
+            initial_path.c_str()
         );
 
         p_logger->Debug(

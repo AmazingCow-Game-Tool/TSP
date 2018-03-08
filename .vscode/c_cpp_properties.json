@@ -1,0 +1,91 @@
+{
+    "configurations": [
+        {
+            "name": "Mac",
+            "includePath": [
+                "/usr/include",
+                "/usr/local/include",
+                "${workspaceRoot}"
+            ],
+            "defines": [],
+            "intelliSenseMode": "clang-x64",
+            "browse": {
+                "path": [
+                    "/usr/include",
+                    "/usr/local/include",
+                    "${workspaceRoot}"
+                ],
+                "limitSymbolsToIncludedHeaders": true,
+                "databaseFilename": ""
+            },
+            "macFrameworkPath": [
+                "/System/Library/Frameworks",
+                "/Library/Frameworks"
+            ]
+        },
+        {
+            "name": "Linux",
+            "includePath": [
+                "/usr/lib/gcc/x86_64-redhat-linux/7/../../../../include/c++/7",
+                "/usr/lib/gcc/x86_64-redhat-linux/7/../../../../include/c++/7/x86_64-redhat-linux",
+                "/usr/lib/gcc/x86_64-redhat-linux/7/../../../../include/c++/7/backward",
+                "/usr/lib/gcc/x86_64-redhat-linux/7/include",
+                "/usr/local/include",
+                "/usr/include",
+                "/usr/include/SDL2",
+                "${workspaceRoot}",
+                "${workspaceRoot}/lib/CMD",
+                "${workspaceRoot}/lib/CoreAssert",
+                "${workspaceRoot}/lib/CoreDir",
+                "${workspaceRoot}/lib/CoreFS",
+                "${workspaceRoot}/lib/CoreFile",
+                "${workspaceRoot}/lib/CoreINI",
+                "${workspaceRoot}/lib/CoreLog",
+                "${workspaceRoot}/lib/CoreString",
+                "${workspaceRoot}/lib/acow_math_goodies",
+                "${workspaceRoot}/lib/acow_cpp_goodies",
+                "${workspaceRoot}/lib/acow_sdl_goodies",
+                "${workspaceRoot}/lib/libtermcolor",
+                "${workspaceRoot}/lib/CMD/CMD",
+                "${workspaceRoot}/lib/acow_algo"
+            ],
+            "defines": [],
+            "intelliSenseMode": "clang-x64",
+            "browse": {
+                "path": [
+                    "/usr/lib/gcc/x86_64-redhat-linux/7/../../../../include/c++/7",
+                    "/usr/lib/gcc/x86_64-redhat-linux/7/../../../../include/c++/7/x86_64-redhat-linux",
+                    "/usr/lib/gcc/x86_64-redhat-linux/7/../../../../include/c++/7/backward",
+                    "/usr/lib/gcc/x86_64-redhat-linux/7/include",
+                    "/usr/local/include",
+                    "/usr/include",
+                    "${workspaceRoot}"
+                ],
+                "limitSymbolsToIncludedHeaders": true,
+                "databaseFilename": ""
+            }
+        },
+        {
+            "name": "Win32",
+            "includePath": [
+                "C:/Program Files (x86)/Microsoft Visual Studio 14.0/VC/include",
+                "${workspaceRoot}"
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE"
+            ],
+            "intelliSenseMode": "msvc-x64",
+            "browse": {
+                "path": [
+                    "C:/Program Files (x86)/Microsoft Visual Studio 14.0/VC/include/*",
+                    "${workspaceRoot}"
+                ],
+                "limitSymbolsToIncludedHeaders": true,
+                "databaseFilename": ""
+            }
+        }
+    ],
+    "version": 3
+}

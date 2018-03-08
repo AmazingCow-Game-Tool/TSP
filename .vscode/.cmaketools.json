@@ -1,0 +1,1331 @@
+{
+  "variant": {
+    "label": "Debug",
+    "keywordSettings": {
+      "buildType": "debug"
+    },
+    "description": "Emit debug information without performing optimizations"
+  },
+  "activeEnvironments": [],
+  "codeModel": {
+    "configurations": [
+      {
+        "name": "Debug",
+        "projects": [
+          {
+            "buildDirectory": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/build/lib/CMD",
+            "name": "CMD",
+            "sourceDirectory": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/lib/CMD",
+            "targets": [
+              {
+                "artifacts": [
+                  "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/build/lib/CMD/libCMD.a"
+                ],
+                "buildDirectory": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/build/lib/CMD",
+                "fileGroups": [
+                  {
+                    "compileFlags": "-g   -std=gnu++11",
+                    "defines": [
+                      "ACOW_MATH_HAS_SDL_SUPPORT=1"
+                    ],
+                    "includePath": [
+                      {
+                        "path": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP"
+                      },
+                      {
+                        "path": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/lib/CMD/CMD"
+                      },
+                      {
+                        "path": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/lib/CMD"
+                      },
+                      {
+                        "path": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/lib/acow_cpp_goodies"
+                      },
+                      {
+                        "path": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/lib/CoreAssert"
+                      },
+                      {
+                        "path": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/lib/CoreString"
+                      },
+                      {
+                        "path": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/lib/CoreLog"
+                      },
+                      {
+                        "path": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/lib/libtermcolor"
+                      },
+                      {
+                        "path": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/lib/acow_nt_posix"
+                      }
+                    ],
+                    "isGenerated": false,
+                    "language": "CXX",
+                    "sources": [
+                      "CMD/src/Parser.cpp",
+                      "CMD/src/Flag.cpp",
+                      "CMD/src/FlagOptions.cpp",
+                      "CMD/src/private/Logger.cpp"
+                    ]
+                  }
+                ],
+                "fullName": "libCMD.a",
+                "linkerLanguage": "CXX",
+                "name": "CMD",
+                "sourceDirectory": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/lib/CMD",
+                "type": "STATIC_LIBRARY"
+              }
+            ]
+          },
+          {
+            "buildDirectory": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/build/lib/CoreAssert",
+            "name": "CoreAssert",
+            "sourceDirectory": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/lib/CoreAssert",
+            "targets": [
+              {
+                "artifacts": [
+                  "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/build/lib/CoreAssert/libCoreAssert.a"
+                ],
+                "buildDirectory": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/build/lib/CoreAssert",
+                "fileGroups": [
+                  {
+                    "compileFlags": "-g   -std=gnu++11",
+                    "defines": [
+                      "ACOW_MATH_HAS_SDL_SUPPORT=1"
+                    ],
+                    "includePath": [
+                      {
+                        "path": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP"
+                      },
+                      {
+                        "path": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/lib/CoreAssert"
+                      }
+                    ],
+                    "isGenerated": false,
+                    "language": "CXX",
+                    "sources": [
+                      "CoreAssert/src/private/PrivateHelpers.cpp"
+                    ]
+                  }
+                ],
+                "fullName": "libCoreAssert.a",
+                "linkerLanguage": "CXX",
+                "name": "CoreAssert",
+                "sourceDirectory": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/lib/CoreAssert",
+                "type": "STATIC_LIBRARY"
+              }
+            ]
+          },
+          {
+            "buildDirectory": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/build/lib/CoreDir",
+            "name": "CoreDir",
+            "sourceDirectory": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/lib/CoreDir",
+            "targets": [
+              {
+                "artifacts": [
+                  "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/build/lib/CoreDir/libCoreDir.a"
+                ],
+                "buildDirectory": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/build/lib/CoreDir",
+                "fileGroups": [
+                  {
+                    "compileFlags": "-g   -std=gnu++11",
+                    "defines": [
+                      "ACOW_MATH_HAS_SDL_SUPPORT=1"
+                    ],
+                    "includePath": [
+                      {
+                        "path": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP"
+                      },
+                      {
+                        "path": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/lib/CoreDir"
+                      },
+                      {
+                        "path": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/lib/CoreFS"
+                      },
+                      {
+                        "path": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/lib/acow_cpp_goodies"
+                      }
+                    ],
+                    "isGenerated": false,
+                    "language": "CXX",
+                    "sources": [
+                      "CoreDir/src/gnu_linux/os_functions.cpp",
+                      "CoreDir/src/win32/os_functions.cpp",
+                      "CoreDir/src/CoreDir.cpp"
+                    ]
+                  }
+                ],
+                "fullName": "libCoreDir.a",
+                "linkerLanguage": "CXX",
+                "name": "CoreDir",
+                "sourceDirectory": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/lib/CoreDir",
+                "type": "STATIC_LIBRARY"
+              }
+            ]
+          },
+          {
+            "buildDirectory": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/build/lib/CoreFile",
+            "name": "CoreFile",
+            "sourceDirectory": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/lib/CoreFile",
+            "targets": [
+              {
+                "artifacts": [
+                  "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/build/lib/CoreFile/libCoreFile.a"
+                ],
+                "buildDirectory": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/build/lib/CoreFile",
+                "fileGroups": [
+                  {
+                    "compileFlags": "-g   -std=gnu++11",
+                    "defines": [
+                      "ACOW_MATH_HAS_SDL_SUPPORT=1"
+                    ],
+                    "includePath": [
+                      {
+                        "path": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP"
+                      },
+                      {
+                        "path": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/lib/CoreFile"
+                      },
+                      {
+                        "path": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/lib/CoreAssert"
+                      },
+                      {
+                        "path": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/lib/CoreFS"
+                      },
+                      {
+                        "path": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/lib/acow_cpp_goodies"
+                      }
+                    ],
+                    "isGenerated": false,
+                    "language": "CXX",
+                    "sources": [
+                      "CoreFile/src/CoreFile.cpp"
+                    ]
+                  }
+                ],
+                "fullName": "libCoreFile.a",
+                "linkerLanguage": "CXX",
+                "name": "CoreFile",
+                "sourceDirectory": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/lib/CoreFile",
+                "type": "STATIC_LIBRARY"
+              },
+              {
+                "artifacts": [
+                  "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/build/lib/CoreFS/libCoreFS.a"
+                ],
+                "buildDirectory": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/build/lib/CoreFS",
+                "fileGroups": [
+                  {
+                    "compileFlags": "-g   -std=gnu++11",
+                    "defines": [
+                      "ACOW_MATH_HAS_SDL_SUPPORT=1"
+                    ],
+                    "includePath": [
+                      {
+                        "path": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP"
+                      },
+                      {
+                        "path": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/lib/CoreFS"
+                      },
+                      {
+                        "path": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/lib/acow_cpp_goodies"
+                      }
+                    ],
+                    "isGenerated": false,
+                    "language": "CXX",
+                    "sources": [
+                      "CoreFS/src/CoreFS.cpp",
+                      "CoreFS/src/CoreFS_Unix.cpp",
+                      "CoreFS/src/CoreFS_Win32.cpp"
+                    ]
+                  }
+                ],
+                "fullName": "libCoreFS.a",
+                "linkerLanguage": "CXX",
+                "name": "CoreFS",
+                "sourceDirectory": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/lib/CoreFS",
+                "type": "STATIC_LIBRARY"
+              }
+            ]
+          },
+          {
+            "buildDirectory": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/build/lib/CoreINI",
+            "name": "CoreIni",
+            "sourceDirectory": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/lib/CoreINI",
+            "targets": [
+              {
+                "artifacts": [
+                  "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/build/lib/CoreINI/libCoreIni.a"
+                ],
+                "buildDirectory": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/build/lib/CoreINI",
+                "fileGroups": [
+                  {
+                    "compileFlags": "-g   -std=gnu++11",
+                    "defines": [
+                      "ACOW_MATH_HAS_SDL_SUPPORT=1"
+                    ],
+                    "includePath": [
+                      {
+                        "path": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP"
+                      },
+                      {
+                        "path": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/lib/CoreINI"
+                      },
+                      {
+                        "path": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/lib/CoreAssert"
+                      },
+                      {
+                        "path": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/lib/CoreFS"
+                      },
+                      {
+                        "path": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/lib/acow_cpp_goodies"
+                      },
+                      {
+                        "path": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/lib/CoreFile"
+                      },
+                      {
+                        "path": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/lib/CoreString"
+                      }
+                    ],
+                    "isGenerated": false,
+                    "language": "CXX",
+                    "sources": [
+                      "CoreIni/src/Ini.cpp"
+                    ]
+                  }
+                ],
+                "fullName": "libCoreIni.a",
+                "linkerLanguage": "CXX",
+                "name": "CoreIni",
+                "sourceDirectory": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/lib/CoreINI",
+                "type": "STATIC_LIBRARY"
+              }
+            ]
+          },
+          {
+            "buildDirectory": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/build/lib/CoreLog",
+            "name": "CoreLog",
+            "sourceDirectory": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/lib/CoreLog",
+            "targets": [
+              {
+                "artifacts": [
+                  "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/build/lib/CoreLog/libCoreLog.a"
+                ],
+                "buildDirectory": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/build/lib/CoreLog",
+                "fileGroups": [
+                  {
+                    "compileFlags": "-g   -std=gnu++11",
+                    "defines": [
+                      "ACOW_MATH_HAS_SDL_SUPPORT=1"
+                    ],
+                    "includePath": [
+                      {
+                        "path": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP"
+                      },
+                      {
+                        "path": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/lib/CoreLog"
+                      },
+                      {
+                        "path": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/lib/CoreString"
+                      },
+                      {
+                        "path": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/lib/CoreAssert"
+                      },
+                      {
+                        "path": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/lib/libtermcolor"
+                      },
+                      {
+                        "path": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/lib/acow_nt_posix"
+                      },
+                      {
+                        "path": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/lib/acow_cpp_goodies"
+                      }
+                    ],
+                    "isGenerated": false,
+                    "language": "CXX",
+                    "sources": [
+                      "CoreLog/src/Log.cpp",
+                      "CoreLog/src/Logger.cpp",
+                      "CoreLog/src/private/os_functions.cpp"
+                    ]
+                  }
+                ],
+                "fullName": "libCoreLog.a",
+                "linkerLanguage": "CXX",
+                "name": "CoreLog",
+                "sourceDirectory": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/lib/CoreLog",
+                "type": "STATIC_LIBRARY"
+              }
+            ]
+          },
+          {
+            "buildDirectory": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/build/lib/CoreString",
+            "name": "CoreString",
+            "sourceDirectory": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/lib/CoreString",
+            "targets": [
+              {
+                "artifacts": [
+                  "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/build/lib/CoreString/libCoreString.a"
+                ],
+                "buildDirectory": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/build/lib/CoreString",
+                "fileGroups": [
+                  {
+                    "compileFlags": "-g   -std=gnu++11",
+                    "defines": [
+                      "ACOW_MATH_HAS_SDL_SUPPORT=1"
+                    ],
+                    "includePath": [
+                      {
+                        "path": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP"
+                      },
+                      {
+                        "path": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/lib/CoreString"
+                      },
+                      {
+                        "path": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/lib/CoreAssert"
+                      }
+                    ],
+                    "isGenerated": false,
+                    "language": "CXX",
+                    "sources": [
+                      "CoreString/libs/asprintf/asprintf.cpp",
+                      "CoreString/libs/asprintf/vasprintf-c99.cpp",
+                      "CoreString/src/CoreString.cpp"
+                    ]
+                  }
+                ],
+                "fullName": "libCoreString.a",
+                "linkerLanguage": "CXX",
+                "name": "CoreString",
+                "sourceDirectory": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/lib/CoreString",
+                "type": "STATIC_LIBRARY"
+              }
+            ]
+          },
+          {
+            "buildDirectory": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/build/lib/acow_algo",
+            "name": "acow_algo",
+            "sourceDirectory": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/lib/acow_algo",
+            "targets": [
+              {
+                "artifacts": [
+                  "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/build/lib/acow_algo/libacow_algo.a"
+                ],
+                "buildDirectory": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/build/lib/acow_algo",
+                "fileGroups": [
+                  {
+                    "compileFlags": "-g   -std=gnu++11",
+                    "defines": [
+                      "ACOW_MATH_HAS_SDL_SUPPORT=1"
+                    ],
+                    "includePath": [
+                      {
+                        "path": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP"
+                      },
+                      {
+                        "path": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/lib/acow_algo"
+                      }
+                    ],
+                    "isGenerated": false,
+                    "language": "CXX",
+                    "sources": [
+                      "acow/src/something.cpp"
+                    ]
+                  }
+                ],
+                "fullName": "libacow_algo.a",
+                "linkerLanguage": "CXX",
+                "name": "acow_algo",
+                "sourceDirectory": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/lib/acow_algo",
+                "type": "STATIC_LIBRARY"
+              }
+            ]
+          },
+          {
+            "buildDirectory": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/build/lib/acow_cpp_goodies",
+            "name": "acow_cpp_goodies",
+            "sourceDirectory": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/lib/acow_cpp_goodies",
+            "targets": [
+              {
+                "artifacts": [
+                  "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/build/lib/acow_cpp_goodies/libacow_cpp_goodies.a"
+                ],
+                "buildDirectory": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/build/lib/acow_cpp_goodies",
+                "fileGroups": [
+                  {
+                    "compileFlags": "-g   -std=gnu++11",
+                    "defines": [
+                      "ACOW_MATH_HAS_SDL_SUPPORT=1"
+                    ],
+                    "includePath": [
+                      {
+                        "path": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP"
+                      },
+                      {
+                        "path": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/lib/acow_cpp_goodies"
+                      }
+                    ],
+                    "isGenerated": false,
+                    "language": "CXX",
+                    "sources": [
+                      "acow/src/Debugger.cpp",
+                      "acow/src/private/BitwiseUtils.cpp"
+                    ]
+                  }
+                ],
+                "fullName": "libacow_cpp_goodies.a",
+                "linkerLanguage": "CXX",
+                "name": "acow_cpp_goodies",
+                "sourceDirectory": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/lib/acow_cpp_goodies",
+                "type": "STATIC_LIBRARY"
+              }
+            ]
+          },
+          {
+            "buildDirectory": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/build/lib/acow_math_goodies",
+            "name": "acow_math_goodies",
+            "sourceDirectory": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/lib/acow_math_goodies",
+            "targets": [
+              {
+                "artifacts": [
+                  "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/build/lib/acow_math_goodies/libacow_math_goodies.a"
+                ],
+                "buildDirectory": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/build/lib/acow_math_goodies",
+                "fileGroups": [
+                  {
+                    "compileFlags": "-g   -std=gnu++11",
+                    "defines": [
+                      "ACOW_MATH_HAS_SDL_SUPPORT=1"
+                    ],
+                    "includePath": [
+                      {
+                        "path": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP"
+                      },
+                      {
+                        "path": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/lib/acow_math_goodies"
+                      },
+                      {
+                        "path": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/lib/acow_cpp_goodies"
+                      }
+                    ],
+                    "isGenerated": false,
+                    "language": "CXX",
+                    "sources": [
+                      "acow/src/dummy.cpp"
+                    ]
+                  }
+                ],
+                "fullName": "libacow_math_goodies.a",
+                "linkerLanguage": "CXX",
+                "name": "acow_math_goodies",
+                "sourceDirectory": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/lib/acow_math_goodies",
+                "type": "STATIC_LIBRARY"
+              }
+            ]
+          },
+          {
+            "buildDirectory": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/build/lib/acow_nt_posix",
+            "name": "acow_nt_posix",
+            "sourceDirectory": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/lib/acow_nt_posix",
+            "targets": [
+              {
+                "artifacts": [
+                  "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/build/lib/acow_nt_posix/libacow_nt_posix.a"
+                ],
+                "buildDirectory": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/build/lib/acow_nt_posix",
+                "fileGroups": [
+                  {
+                    "compileFlags": "-g   -std=gnu++11",
+                    "defines": [
+                      "ACOW_MATH_HAS_SDL_SUPPORT=1"
+                    ],
+                    "includePath": [
+                      {
+                        "path": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP"
+                      },
+                      {
+                        "path": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/lib/acow_nt_posix"
+                      },
+                      {
+                        "path": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/lib/acow_cpp_goodies"
+                      }
+                    ],
+                    "isGenerated": false,
+                    "language": "CXX",
+                    "sources": [
+                      "acow/src/win32/utsname.cpp"
+                    ]
+                  }
+                ],
+                "fullName": "libacow_nt_posix.a",
+                "linkerLanguage": "CXX",
+                "name": "acow_nt_posix",
+                "sourceDirectory": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/lib/acow_nt_posix",
+                "type": "STATIC_LIBRARY"
+              }
+            ]
+          },
+          {
+            "buildDirectory": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/build/lib/acow_sdl_goodies",
+            "name": "acow_sdl_goodies",
+            "sourceDirectory": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/lib/acow_sdl_goodies",
+            "targets": [
+              {
+                "artifacts": [
+                  "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/build/lib/acow_sdl_goodies/libacow_sdl_goodies.a"
+                ],
+                "buildDirectory": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/build/lib/acow_sdl_goodies",
+                "fileGroups": [
+                  {
+                    "compileFlags": "-g   -std=gnu++11",
+                    "defines": [
+                      "ACOW_MATH_HAS_SDL_SUPPORT=1"
+                    ],
+                    "includePath": [
+                      {
+                        "path": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP"
+                      },
+                      {
+                        "path": "/usr/include/SDL2"
+                      },
+                      {
+                        "path": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/lib/acow_sdl_goodies"
+                      },
+                      {
+                        "path": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/lib/acow_cpp_goodies"
+                      },
+                      {
+                        "path": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/lib/CoreAssert"
+                      },
+                      {
+                        "path": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/lib/CoreString"
+                      }
+                    ],
+                    "isGenerated": false,
+                    "language": "CXX",
+                    "sources": [
+                      "acow/src/SDL.cpp",
+                      "acow/src/IMG.cpp",
+                      "acow/src/TTF.cpp",
+                      "acow/src/Error.cpp",
+                      "acow/src/Window.cpp",
+                      "acow/src/Renderer.cpp"
+                    ]
+                  }
+                ],
+                "fullName": "libacow_sdl_goodies.a",
+                "linkerLanguage": "CXX",
+                "name": "acow_sdl_goodies",
+                "sourceDirectory": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/lib/acow_sdl_goodies",
+                "type": "STATIC_LIBRARY"
+              }
+            ]
+          },
+          {
+            "buildDirectory": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/build/lib/libtermcolor",
+            "name": "libtermcolor",
+            "sourceDirectory": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/lib/libtermcolor",
+            "targets": [
+              {
+                "artifacts": [
+                  "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/build/lib/libtermcolor/liblibtermcolor.a"
+                ],
+                "buildDirectory": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/build/lib/libtermcolor",
+                "fileGroups": [
+                  {
+                    "compileFlags": "-g   -std=gnu++11",
+                    "defines": [
+                      "ACOW_MATH_HAS_SDL_SUPPORT=1"
+                    ],
+                    "includePath": [
+                      {
+                        "path": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP"
+                      },
+                      {
+                        "path": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/lib/libtermcolor"
+                      },
+                      {
+                        "path": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/lib/acow_nt_posix"
+                      },
+                      {
+                        "path": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/lib/acow_cpp_goodies"
+                      }
+                    ],
+                    "isGenerated": false,
+                    "language": "CXX",
+                    "sources": [
+                      "termcolor/src/Config.cpp",
+                      "termcolor/src/Functions.cpp"
+                    ]
+                  }
+                ],
+                "fullName": "liblibtermcolor.a",
+                "linkerLanguage": "CXX",
+                "name": "libtermcolor",
+                "sourceDirectory": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/lib/libtermcolor",
+                "type": "STATIC_LIBRARY"
+              }
+            ]
+          },
+          {
+            "buildDirectory": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/build",
+            "name": "tsp",
+            "sourceDirectory": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP",
+            "targets": [
+              {
+                "artifacts": [
+                  "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/build/tsp"
+                ],
+                "buildDirectory": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/build",
+                "fileGroups": [
+                  {
+                    "compileFlags": "-g   -std=gnu++11",
+                    "defines": [
+                      "ACOW_MATH_HAS_SDL_SUPPORT=1"
+                    ],
+                    "includePath": [
+                      {
+                        "path": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP"
+                      },
+                      {
+                        "path": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/lib/acow_math_goodies"
+                      },
+                      {
+                        "path": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/lib/acow_cpp_goodies"
+                      },
+                      {
+                        "path": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/lib/acow_algo"
+                      },
+                      {
+                        "path": "/usr/include/SDL2"
+                      },
+                      {
+                        "path": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/lib/acow_sdl_goodies"
+                      },
+                      {
+                        "path": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/lib/CoreAssert"
+                      },
+                      {
+                        "path": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/lib/CoreString"
+                      },
+                      {
+                        "path": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/lib/CoreDir"
+                      },
+                      {
+                        "path": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/lib/CoreFS"
+                      },
+                      {
+                        "path": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/lib/CoreINI"
+                      },
+                      {
+                        "path": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/lib/CoreFile"
+                      },
+                      {
+                        "path": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/lib/CMD"
+                      },
+                      {
+                        "path": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/lib/CoreLog"
+                      },
+                      {
+                        "path": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/lib/libtermcolor"
+                      },
+                      {
+                        "path": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/lib/acow_nt_posix"
+                      }
+                    ],
+                    "isGenerated": false,
+                    "language": "CXX",
+                    "sources": [
+                      "src/main.cpp",
+                      "src/Core/RunInfo.cpp",
+                      "src/Core/Image/Image.cpp",
+                      "src/Core/ImageFinder/DirectoryImageFinder.cpp",
+                      "src/Core/ImageLoader/ImageLoader.cpp",
+                      "src/Core/PackingStrategy/SimplePackingStrategy.cpp",
+                      "src/Core/SheetImageWriter/BasicSheetImageWriter.cpp",
+                      "src/Core/SheetRectWriter/CooperSheetRectWriter.cpp",
+                      "src/Core/private/Logger.cpp",
+                      "src/Core/ImageSorter/Factory/ImageSorterFactory.cpp",
+                      "src/UI/UI.cpp",
+                      "src/UI/private/Logger.cpp"
+                    ]
+                  }
+                ],
+                "fullName": "tsp",
+                "linkLanguageFlags": "-g",
+                "linkLibraries": "lib/acow_math_goodies/libacow_math_goodies.a lib/acow_cpp_goodies/libacow_cpp_goodies.a lib/acow_algo/libacow_algo.a lib/acow_sdl_goodies/libacow_sdl_goodies.a lib/CoreAssert/libCoreAssert.a lib/CoreDir/libCoreDir.a lib/CoreINI/libCoreIni.a lib/CMD/libCMD.a /usr/lib64/libSDL2main.a /usr/lib64/libSDL2.so -lpthread /usr/lib64/libSDL2_image.so /usr/lib64/libSDL2_ttf.so lib/CoreFile/libCoreFile.a lib/CoreFS/libCoreFS.a lib/CoreLog/libCoreLog.a lib/CoreString/libCoreString.a lib/CoreAssert/libCoreAssert.a lib/libtermcolor/liblibtermcolor.a lib/acow_nt_posix/libacow_nt_posix.a lib/acow_cpp_goodies/libacow_cpp_goodies.a",
+                "linkerLanguage": "CXX",
+                "name": "tsp",
+                "sourceDirectory": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP",
+                "type": "EXECUTABLE"
+              },
+              {
+                "artifacts": [
+                  "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/build/lib/acow_math_goodies/libacow_math_goodies.a"
+                ],
+                "buildDirectory": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/build/lib/acow_math_goodies",
+                "fileGroups": [
+                  {
+                    "compileFlags": "-g   -std=gnu++11",
+                    "defines": [
+                      "ACOW_MATH_HAS_SDL_SUPPORT=1"
+                    ],
+                    "includePath": [
+                      {
+                        "path": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP"
+                      },
+                      {
+                        "path": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/lib/acow_math_goodies"
+                      },
+                      {
+                        "path": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/lib/acow_cpp_goodies"
+                      }
+                    ],
+                    "isGenerated": false,
+                    "language": "CXX",
+                    "sources": [
+                      "acow/src/dummy.cpp"
+                    ]
+                  }
+                ],
+                "fullName": "libacow_math_goodies.a",
+                "linkerLanguage": "CXX",
+                "name": "acow_math_goodies",
+                "sourceDirectory": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/lib/acow_math_goodies",
+                "type": "STATIC_LIBRARY"
+              },
+              {
+                "artifacts": [
+                  "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/build/lib/acow_cpp_goodies/libacow_cpp_goodies.a"
+                ],
+                "buildDirectory": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/build/lib/acow_cpp_goodies",
+                "fileGroups": [
+                  {
+                    "compileFlags": "-g   -std=gnu++11",
+                    "defines": [
+                      "ACOW_MATH_HAS_SDL_SUPPORT=1"
+                    ],
+                    "includePath": [
+                      {
+                        "path": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP"
+                      },
+                      {
+                        "path": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/lib/acow_cpp_goodies"
+                      }
+                    ],
+                    "isGenerated": false,
+                    "language": "CXX",
+                    "sources": [
+                      "acow/src/Debugger.cpp",
+                      "acow/src/private/BitwiseUtils.cpp"
+                    ]
+                  }
+                ],
+                "fullName": "libacow_cpp_goodies.a",
+                "linkerLanguage": "CXX",
+                "name": "acow_cpp_goodies",
+                "sourceDirectory": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/lib/acow_cpp_goodies",
+                "type": "STATIC_LIBRARY"
+              },
+              {
+                "artifacts": [
+                  "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/build/lib/acow_algo/libacow_algo.a"
+                ],
+                "buildDirectory": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/build/lib/acow_algo",
+                "fileGroups": [
+                  {
+                    "compileFlags": "-g   -std=gnu++11",
+                    "defines": [
+                      "ACOW_MATH_HAS_SDL_SUPPORT=1"
+                    ],
+                    "includePath": [
+                      {
+                        "path": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP"
+                      },
+                      {
+                        "path": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/lib/acow_algo"
+                      }
+                    ],
+                    "isGenerated": false,
+                    "language": "CXX",
+                    "sources": [
+                      "acow/src/something.cpp"
+                    ]
+                  }
+                ],
+                "fullName": "libacow_algo.a",
+                "linkerLanguage": "CXX",
+                "name": "acow_algo",
+                "sourceDirectory": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/lib/acow_algo",
+                "type": "STATIC_LIBRARY"
+              },
+              {
+                "artifacts": [
+                  "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/build/lib/acow_sdl_goodies/libacow_sdl_goodies.a"
+                ],
+                "buildDirectory": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/build/lib/acow_sdl_goodies",
+                "fileGroups": [
+                  {
+                    "compileFlags": "-g   -std=gnu++11",
+                    "defines": [
+                      "ACOW_MATH_HAS_SDL_SUPPORT=1"
+                    ],
+                    "includePath": [
+                      {
+                        "path": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP"
+                      },
+                      {
+                        "path": "/usr/include/SDL2"
+                      },
+                      {
+                        "path": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/lib/acow_sdl_goodies"
+                      },
+                      {
+                        "path": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/lib/acow_cpp_goodies"
+                      },
+                      {
+                        "path": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/lib/CoreAssert"
+                      },
+                      {
+                        "path": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/lib/CoreString"
+                      }
+                    ],
+                    "isGenerated": false,
+                    "language": "CXX",
+                    "sources": [
+                      "acow/src/SDL.cpp",
+                      "acow/src/IMG.cpp",
+                      "acow/src/TTF.cpp",
+                      "acow/src/Error.cpp",
+                      "acow/src/Window.cpp",
+                      "acow/src/Renderer.cpp"
+                    ]
+                  }
+                ],
+                "fullName": "libacow_sdl_goodies.a",
+                "linkerLanguage": "CXX",
+                "name": "acow_sdl_goodies",
+                "sourceDirectory": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/lib/acow_sdl_goodies",
+                "type": "STATIC_LIBRARY"
+              },
+              {
+                "artifacts": [
+                  "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/build/lib/acow_nt_posix/libacow_nt_posix.a"
+                ],
+                "buildDirectory": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/build/lib/acow_nt_posix",
+                "fileGroups": [
+                  {
+                    "compileFlags": "-g   -std=gnu++11",
+                    "defines": [
+                      "ACOW_MATH_HAS_SDL_SUPPORT=1"
+                    ],
+                    "includePath": [
+                      {
+                        "path": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP"
+                      },
+                      {
+                        "path": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/lib/acow_nt_posix"
+                      },
+                      {
+                        "path": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/lib/acow_cpp_goodies"
+                      }
+                    ],
+                    "isGenerated": false,
+                    "language": "CXX",
+                    "sources": [
+                      "acow/src/win32/utsname.cpp"
+                    ]
+                  }
+                ],
+                "fullName": "libacow_nt_posix.a",
+                "linkerLanguage": "CXX",
+                "name": "acow_nt_posix",
+                "sourceDirectory": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/lib/acow_nt_posix",
+                "type": "STATIC_LIBRARY"
+              },
+              {
+                "artifacts": [
+                  "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/build/lib/CoreAssert/libCoreAssert.a"
+                ],
+                "buildDirectory": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/build/lib/CoreAssert",
+                "fileGroups": [
+                  {
+                    "compileFlags": "-g   -std=gnu++11",
+                    "defines": [
+                      "ACOW_MATH_HAS_SDL_SUPPORT=1"
+                    ],
+                    "includePath": [
+                      {
+                        "path": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP"
+                      },
+                      {
+                        "path": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/lib/CoreAssert"
+                      }
+                    ],
+                    "isGenerated": false,
+                    "language": "CXX",
+                    "sources": [
+                      "CoreAssert/src/private/PrivateHelpers.cpp"
+                    ]
+                  }
+                ],
+                "fullName": "libCoreAssert.a",
+                "linkerLanguage": "CXX",
+                "name": "CoreAssert",
+                "sourceDirectory": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/lib/CoreAssert",
+                "type": "STATIC_LIBRARY"
+              },
+              {
+                "artifacts": [
+                  "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/build/lib/CoreDir/libCoreDir.a"
+                ],
+                "buildDirectory": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/build/lib/CoreDir",
+                "fileGroups": [
+                  {
+                    "compileFlags": "-g   -std=gnu++11",
+                    "defines": [
+                      "ACOW_MATH_HAS_SDL_SUPPORT=1"
+                    ],
+                    "includePath": [
+                      {
+                        "path": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP"
+                      },
+                      {
+                        "path": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/lib/CoreDir"
+                      },
+                      {
+                        "path": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/lib/CoreFS"
+                      },
+                      {
+                        "path": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/lib/acow_cpp_goodies"
+                      }
+                    ],
+                    "isGenerated": false,
+                    "language": "CXX",
+                    "sources": [
+                      "CoreDir/src/gnu_linux/os_functions.cpp",
+                      "CoreDir/src/win32/os_functions.cpp",
+                      "CoreDir/src/CoreDir.cpp"
+                    ]
+                  }
+                ],
+                "fullName": "libCoreDir.a",
+                "linkerLanguage": "CXX",
+                "name": "CoreDir",
+                "sourceDirectory": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/lib/CoreDir",
+                "type": "STATIC_LIBRARY"
+              },
+              {
+                "artifacts": [
+                  "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/build/lib/CoreFile/libCoreFile.a"
+                ],
+                "buildDirectory": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/build/lib/CoreFile",
+                "fileGroups": [
+                  {
+                    "compileFlags": "-g   -std=gnu++11",
+                    "defines": [
+                      "ACOW_MATH_HAS_SDL_SUPPORT=1"
+                    ],
+                    "includePath": [
+                      {
+                        "path": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP"
+                      },
+                      {
+                        "path": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/lib/CoreFile"
+                      },
+                      {
+                        "path": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/lib/CoreAssert"
+                      },
+                      {
+                        "path": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/lib/CoreFS"
+                      },
+                      {
+                        "path": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/lib/acow_cpp_goodies"
+                      }
+                    ],
+                    "isGenerated": false,
+                    "language": "CXX",
+                    "sources": [
+                      "CoreFile/src/CoreFile.cpp"
+                    ]
+                  }
+                ],
+                "fullName": "libCoreFile.a",
+                "linkerLanguage": "CXX",
+                "name": "CoreFile",
+                "sourceDirectory": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/lib/CoreFile",
+                "type": "STATIC_LIBRARY"
+              },
+              {
+                "artifacts": [
+                  "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/build/lib/CoreFS/libCoreFS.a"
+                ],
+                "buildDirectory": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/build/lib/CoreFS",
+                "fileGroups": [
+                  {
+                    "compileFlags": "-g   -std=gnu++11",
+                    "defines": [
+                      "ACOW_MATH_HAS_SDL_SUPPORT=1"
+                    ],
+                    "includePath": [
+                      {
+                        "path": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP"
+                      },
+                      {
+                        "path": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/lib/CoreFS"
+                      },
+                      {
+                        "path": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/lib/acow_cpp_goodies"
+                      }
+                    ],
+                    "isGenerated": false,
+                    "language": "CXX",
+                    "sources": [
+                      "CoreFS/src/CoreFS.cpp",
+                      "CoreFS/src/CoreFS_Unix.cpp",
+                      "CoreFS/src/CoreFS_Win32.cpp"
+                    ]
+                  }
+                ],
+                "fullName": "libCoreFS.a",
+                "linkerLanguage": "CXX",
+                "name": "CoreFS",
+                "sourceDirectory": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/lib/CoreFS",
+                "type": "STATIC_LIBRARY"
+              },
+              {
+                "artifacts": [
+                  "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/build/lib/CoreINI/libCoreIni.a"
+                ],
+                "buildDirectory": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/build/lib/CoreINI",
+                "fileGroups": [
+                  {
+                    "compileFlags": "-g   -std=gnu++11",
+                    "defines": [
+                      "ACOW_MATH_HAS_SDL_SUPPORT=1"
+                    ],
+                    "includePath": [
+                      {
+                        "path": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP"
+                      },
+                      {
+                        "path": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/lib/CoreINI"
+                      },
+                      {
+                        "path": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/lib/CoreAssert"
+                      },
+                      {
+                        "path": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/lib/CoreFS"
+                      },
+                      {
+                        "path": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/lib/acow_cpp_goodies"
+                      },
+                      {
+                        "path": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/lib/CoreFile"
+                      },
+                      {
+                        "path": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/lib/CoreString"
+                      }
+                    ],
+                    "isGenerated": false,
+                    "language": "CXX",
+                    "sources": [
+                      "CoreIni/src/Ini.cpp"
+                    ]
+                  }
+                ],
+                "fullName": "libCoreIni.a",
+                "linkerLanguage": "CXX",
+                "name": "CoreIni",
+                "sourceDirectory": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/lib/CoreINI",
+                "type": "STATIC_LIBRARY"
+              },
+              {
+                "artifacts": [
+                  "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/build/lib/CoreLog/libCoreLog.a"
+                ],
+                "buildDirectory": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/build/lib/CoreLog",
+                "fileGroups": [
+                  {
+                    "compileFlags": "-g   -std=gnu++11",
+                    "defines": [
+                      "ACOW_MATH_HAS_SDL_SUPPORT=1"
+                    ],
+                    "includePath": [
+                      {
+                        "path": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP"
+                      },
+                      {
+                        "path": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/lib/CoreLog"
+                      },
+                      {
+                        "path": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/lib/CoreString"
+                      },
+                      {
+                        "path": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/lib/CoreAssert"
+                      },
+                      {
+                        "path": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/lib/libtermcolor"
+                      },
+                      {
+                        "path": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/lib/acow_nt_posix"
+                      },
+                      {
+                        "path": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/lib/acow_cpp_goodies"
+                      }
+                    ],
+                    "isGenerated": false,
+                    "language": "CXX",
+                    "sources": [
+                      "CoreLog/src/Log.cpp",
+                      "CoreLog/src/Logger.cpp",
+                      "CoreLog/src/private/os_functions.cpp"
+                    ]
+                  }
+                ],
+                "fullName": "libCoreLog.a",
+                "linkerLanguage": "CXX",
+                "name": "CoreLog",
+                "sourceDirectory": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/lib/CoreLog",
+                "type": "STATIC_LIBRARY"
+              },
+              {
+                "artifacts": [
+                  "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/build/lib/CoreString/libCoreString.a"
+                ],
+                "buildDirectory": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/build/lib/CoreString",
+                "fileGroups": [
+                  {
+                    "compileFlags": "-g   -std=gnu++11",
+                    "defines": [
+                      "ACOW_MATH_HAS_SDL_SUPPORT=1"
+                    ],
+                    "includePath": [
+                      {
+                        "path": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP"
+                      },
+                      {
+                        "path": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/lib/CoreString"
+                      },
+                      {
+                        "path": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/lib/CoreAssert"
+                      }
+                    ],
+                    "isGenerated": false,
+                    "language": "CXX",
+                    "sources": [
+                      "CoreString/libs/asprintf/asprintf.cpp",
+                      "CoreString/libs/asprintf/vasprintf-c99.cpp",
+                      "CoreString/src/CoreString.cpp"
+                    ]
+                  }
+                ],
+                "fullName": "libCoreString.a",
+                "linkerLanguage": "CXX",
+                "name": "CoreString",
+                "sourceDirectory": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/lib/CoreString",
+                "type": "STATIC_LIBRARY"
+              },
+              {
+                "artifacts": [
+                  "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/build/lib/libtermcolor/liblibtermcolor.a"
+                ],
+                "buildDirectory": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/build/lib/libtermcolor",
+                "fileGroups": [
+                  {
+                    "compileFlags": "-g   -std=gnu++11",
+                    "defines": [
+                      "ACOW_MATH_HAS_SDL_SUPPORT=1"
+                    ],
+                    "includePath": [
+                      {
+                        "path": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP"
+                      },
+                      {
+                        "path": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/lib/libtermcolor"
+                      },
+                      {
+                        "path": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/lib/acow_nt_posix"
+                      },
+                      {
+                        "path": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/lib/acow_cpp_goodies"
+                      }
+                    ],
+                    "isGenerated": false,
+                    "language": "CXX",
+                    "sources": [
+                      "termcolor/src/Config.cpp",
+                      "termcolor/src/Functions.cpp"
+                    ]
+                  }
+                ],
+                "fullName": "liblibtermcolor.a",
+                "linkerLanguage": "CXX",
+                "name": "libtermcolor",
+                "sourceDirectory": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/lib/libtermcolor",
+                "type": "STATIC_LIBRARY"
+              },
+              {
+                "artifacts": [
+                  "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/build/lib/CMD/libCMD.a"
+                ],
+                "buildDirectory": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/build/lib/CMD",
+                "fileGroups": [
+                  {
+                    "compileFlags": "-g   -std=gnu++11",
+                    "defines": [
+                      "ACOW_MATH_HAS_SDL_SUPPORT=1"
+                    ],
+                    "includePath": [
+                      {
+                        "path": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP"
+                      },
+                      {
+                        "path": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/lib/CMD/CMD"
+                      },
+                      {
+                        "path": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/lib/CMD"
+                      },
+                      {
+                        "path": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/lib/acow_cpp_goodies"
+                      },
+                      {
+                        "path": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/lib/CoreAssert"
+                      },
+                      {
+                        "path": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/lib/CoreString"
+                      },
+                      {
+                        "path": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/lib/CoreLog"
+                      },
+                      {
+                        "path": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/lib/libtermcolor"
+                      },
+                      {
+                        "path": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/lib/acow_nt_posix"
+                      }
+                    ],
+                    "isGenerated": false,
+                    "language": "CXX",
+                    "sources": [
+                      "CMD/src/Parser.cpp",
+                      "CMD/src/Flag.cpp",
+                      "CMD/src/FlagOptions.cpp",
+                      "CMD/src/private/Logger.cpp"
+                    ]
+                  }
+                ],
+                "fullName": "libCMD.a",
+                "linkerLanguage": "CXX",
+                "name": "CMD",
+                "sourceDirectory": "/home/n2omatt/Documents/Projects/AmazingCow/AmazingCow-Game-Tool/TSP/lib/CMD",
+                "type": "STATIC_LIBRARY"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "cookie": "0.17041314557939047",
+    "inReplyTo": "codemodel",
+    "type": "reply"
+  }
+}

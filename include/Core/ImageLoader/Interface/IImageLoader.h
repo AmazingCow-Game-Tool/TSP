@@ -20,6 +20,8 @@ public:
     // Interface Methods                                                      //
     //------------------------------------------------------------------------//
 public:
+    virtual Image::SPtr LoadImage(const std::string &path) = 0;
+
     virtual std::vector<Image::SPtr> LoadImages(
         const std::vector<std::string> &paths) = 0;
 

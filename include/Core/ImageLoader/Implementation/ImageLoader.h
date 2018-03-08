@@ -15,6 +15,8 @@ class ImageLoader
     // Public Methods                                                         //
     //------------------------------------------------------------------------//
 public:
+    Image::SPtr LoadImage(const std::string &path) override;
+
     std::vector<Image::SPtr> LoadImages(
         const std::vector<std::string> &paths) override;
 

@@ -11,6 +11,12 @@ using namespace Core;
 //----------------------------------------------------------------------------//
 // Interface Methods                                                          //
 //----------------------------------------------------------------------------//
+Image::SPtr
+ImageLoader::LoadImage(const std::string &path)
+{
+    return Image::LoadFromFile(path);
+}
+
 std::vector<Image::SPtr>
 ImageLoader::LoadImages(const std::vector<std::string> &paths)
 {
@@ -26,8 +32,7 @@ ImageLoader::LoadImages(const std::vector<std::string> &paths)
             paths.size(),
             path
         );
-        auto p_image = Image::LoadFromFile(path);
-        images.push_back(p_image);
+        images.push_back(LoadImage(path));
     }
 
     return images;

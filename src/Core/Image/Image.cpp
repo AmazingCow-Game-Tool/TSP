@@ -43,7 +43,7 @@ Image::SPtr Image::LoadFromFile(const std::string &filePath)
         "Loaded image - Path: (%s) - Size: (%.1f, %.1f)",
         p_image->m_path,
         p_image->m_size.GetWidth(),
-        p_image->m_size.GetWeight()
+        p_image->m_size.GetHeight()
     );
 
     return p_image;

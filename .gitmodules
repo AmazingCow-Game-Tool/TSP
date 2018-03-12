@@ -40,3 +40,6 @@
 [submodule "lib/acow_c_goodies"]
 	path = lib/acow_c_goodies
 	url = https://github.com/AmazingCow-Libs/acow_c_goodies
+[submodule "lib/acow_algo"]
+	path = lib/acow_algo
+	url = https://github.com/AmazingCow-Libs/acow_algo

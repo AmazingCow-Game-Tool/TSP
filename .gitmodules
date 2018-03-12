@@ -34,3 +34,9 @@
 [submodule "lib/acow_sdl_goodies"]
 	path = lib/acow_sdl_goodies
 	url = https://github.com/AmazingCow-Libs/acow_sdl_goodies
+[submodule "lib/imgui"]
+	path = lib/imgui
+	url = https://github.com/ocornut/imgui.git
+[submodule "lib/acow_c_goodies"]
+	path = lib/acow_c_goodies
+	url = https://github.com/AmazingCow-Libs/acow_c_goodies

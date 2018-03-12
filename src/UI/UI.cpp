@@ -28,11 +28,16 @@
 #include "acow/algo.h"
 // TSP
 #include "include/UI/private/Logger.h"
+#include "include/UI/private/ImGui_Glue.h"
 #include "include/Core/Core.h"
 
 // Usings
 using namespace TSP;
 
+
+//----------------------------------------------------------------------------//
+// Macros                                                                     //
+//----------------------------------------------------------------------------//
 #define LOG() UI::Logger()
 
 //----------------------------------------------------------------------------//
@@ -296,6 +301,7 @@ ui_handle_events() noexcept
     acow_local_persist SDL_Event s_event {};
     while(SDL_PollEvent(&s_event))
     {
+        UI::imgui_HandleEvent(&s_event);
         if(s_event.type == SDL_QUIT)
             m_isRunning = false;
     }
@@ -310,13 +316,31 @@ ui_update() noexcept
         pack_run                   ();
         render_render_packed_images();
     }
+
+    UI::imgui_Update();
+    {
+        static float f = 0.0f;
+        static int counter = 0;
+
+        ImGui::Text("Hello, world!");                           // Display some text (you can use a format string too)
+        ImGui::SliderFloat("float", &f, 0.0f, 1.0f);            // Edit 1 float using a slider from 0.0f to 1.0f
+
+
+        if (ImGui::Button("Button"))                            // Buttons return true when clicked (NB: most widgets return true when edited/activated)
+            counter++;
+        ImGui::SameLine();
+        ImGui::Text("counter = %d", counter);
+
+        ImGui::Text("Application average %.3f ms/frame (%.1f FPS)", 1000.0f / ImGui::GetIO().Framerate, ImGui::GetIO().Framerate);
+    }
 }
 
 acow_internal_function void
 ui_render() noexcept
 {
-    SDL_SetRenderDrawColor(m_pRenderer.get(),  255, 255, 255, 255);
-    SDL_RenderClear(m_pRenderer.get());
+    UI::imgui_PreRender();
+    // SDL_SetRenderDrawColor(m_pRenderer.get(),  255, 255, 255, 255);
+    // SDL_RenderClear(m_pRenderer.get());
     if(m_pRenderTexture)
     {
         auto size = acow::sdl::Texture::QuerySize(m_pRenderTexture.get());
@@ -331,6 +355,8 @@ ui_render() noexcept
         );
     }
     SDL_RenderPresent(m_pRenderer.get());
+
+    UI::imgui_PostRender();
 }
 
 
@@ -364,7 +390,7 @@ UI::InitLean()
         SDL_WINDOWPOS_CENTERED,
         800,
         600,
-        SDL_WINDOW_RESIZABLE | SDL_WINDOW_HIDDEN
+        SDL_WINDOW_RESIZABLE | SDL_WINDOW_HIDDEN | SDL_WINDOW_OPENGL
     );
 
     //--------------------------------------------------------------------------
@@ -380,6 +406,8 @@ UI::Init(const Core::RunInfo &runInfo) noexcept
     SDL_ShowWindow(m_pWindow.get());
 
     m_runInfo = runInfo;
+
+    imgui_Init(m_pWindow.get());
 
     //--------------------------------------------------------------------------
     // Pre load the images.
